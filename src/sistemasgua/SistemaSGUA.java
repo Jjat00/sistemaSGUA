@@ -6,22 +6,27 @@
 package sistemasgua;
 
 import dao.UserDAOImpl;
+import model.Cliente;
+import views.GUISistemaSGUA;
+
 import java.sql.SQLException;
 
 /**
  *
- * @author jjat02
+ * @author Jaimen Aza
+ * @author Milton Lenis
+ * @author Sharon Zuleta
+ * @author Juan Camargo
+ * @author Javier Diaz
  */
 public class SistemaSGUA {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        try {
-            System.out.println(new UserDAOImpl().selectUser(1144111111L).toString());
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
+    public static void main(String args[]) {
+        Cliente cliente = new Cliente(108859745, 1, "jjat", "00", 316427787, "jjat@gmail.com");
+        System.out.println(cliente.toString());
+
     }
 }

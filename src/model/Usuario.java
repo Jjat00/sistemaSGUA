@@ -3,7 +3,7 @@ package model;
 /**
  * User model
  */
-public class User {
+public class Usuario {
     
     private long cedula;
     private int rol;
@@ -14,7 +14,7 @@ public class User {
     private String email;
     private String password;
 
-    public User(long cedula, int rol, String nombre, String apellido, boolean actividad, long celular, String email, String password) {
+    public Usuario(long cedula, int rol, String nombre, String apellido, boolean actividad, long celular, String email, String password) {
         this.cedula = cedula;
         this.rol = rol;
         this.nombre = nombre;
@@ -91,6 +91,15 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" + "cedula=" + cedula + ", rol=" + rol + ", nombre=" + nombre + ", apellido=" + apellido + ", actividad=" + actividad + ", celular=" + celular + ", email=" + email + ", password=" + password + '}';
+        return "Usuario: {" 
+            + "\n\tcedula=" + this.cedula 
+            + "\n\t, rol=" + this.rol 
+            + "\n\t, nombre=" + this.nombre 
+            + "\n\t, apellido=" + this.apellido 
+            + "\n\t, actividad=" + this.actividad 
+            + "\n\t, celular=" + this.celular 
+            + "\n\t, email=" + this.email 
+            + "\n\t, password=" + this.password 
+            + "\n}";
     }
 }
