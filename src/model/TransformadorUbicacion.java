@@ -10,23 +10,23 @@ package model;
  * @author jjat02
  */
 public class TransformadorUbicacion {
-    private int idTransformador;
+    private long idTransformador;
     private String georeferencia; 
     private String barrio;
     private int comuna;
 
-    public TransformadorUbicacion(int idTransformador, String georeferencia, String barrio, int comuna){
+    public TransformadorUbicacion(long idTransformador, String georeferencia, String barrio, int comuna){
         this.idTransformador = idTransformador;
         this.georeferencia = georeferencia;
         this.barrio = barrio;
         this.comuna = comuna;
     }
 
-    public void setIdTransformador(int idTransformador) {
+    public void setIdTransformador(long idTransformador) {
         this.idTransformador = idTransformador;
     }
 
-    public int getIdTransformador() {
+    public long getIdTransformador() {
         return this.idTransformador;
     }
 

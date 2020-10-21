@@ -10,23 +10,23 @@ package model;
  * @author jjat02
  */
 public class Pago {
-    private int idPago;
+    private long idPago;
     private String fecha;
-    private int idBanco;
-    private int idFactura;
+    private long idBanco;
+    private long idFactura;
 
-    public Pago(int idPago, String fecha, int idBanco, int idFactura){
+    public Pago(long idPago, String fecha, long idBanco, long idFactura){
         this.idPago = idPago;
         this.fecha = fecha;
         this.idBanco = idBanco;
         this.idFactura = idFactura;
     }
     
-    public void setIdPago(int idPago) {
+    public void setIdPago(long idPago) {
         this.idPago = idPago;
     }
     
-    public int getIdPago() {
+    public long getIdPago() {
         return this.idPago;
     }
     
@@ -38,19 +38,19 @@ public class Pago {
         return this.fecha;
     }
     
-    public void setIdBanco(int idBanco) {
+    public void setIdBanco(long idBanco) {
         this.idBanco = idBanco;
     }
     
-    public int getIdBanco() {
+    public long getIdBanco() {
         return this.idBanco;
     }
     
-    public void setIdFactura(int idFactura) {
+    public void setIdFactura(long idFactura) {
         this.idFactura = idFactura;
     }
     
-    public int getIdFactura() {
+    public long getIdFactura() {
         return this.idFactura;
     }
 
