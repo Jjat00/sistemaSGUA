@@ -13,9 +13,9 @@ public class Factura {
 
     private long NoCuenta;
     private long cedulaCliente;
+    private long NoMedidor;
     private boolean estadoPago;
     private int tipoUso;
-    private long NoMedidor;
     private float valorUnitario;
     private float subsidio;
     private float ajustePeso;

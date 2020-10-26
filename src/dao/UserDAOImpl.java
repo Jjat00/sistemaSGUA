@@ -16,7 +16,17 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public boolean insertUser(Usuario user) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean registrar = false;
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "INSERT INTO usuario VALUES (NULL,"+user.getCedula()+","+user.getRol()+","
+                     +user.getNombre()+","+user.getApellido()+","+user.isActividad()+","
+                     +user.getCelular()+","+user.getEmail()+","+user.getPassword()+",)";
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.execute(sql);
+        registrar = true;
+        
+        return registrar;
     }
 
     @Override
@@ -38,17 +48,49 @@ public class UserDAOImpl implements UserDAO{
 
     @Override
     public ArrayList<Usuario> selectAllUsers() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        ArrayList<Usuario> listaUsuario = new ArrayList<>();
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT FROM usuario ORDER BY cedula";
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = null;
+        
+        rs = pstm.executeQuery(sql);
+        while(rs.next()){
+            Usuario user = getUser(rs);
+            listaUsuario.add(user);
+        }
+        
+        return listaUsuario;
     }
 
     @Override
     public boolean updateUser(Usuario user) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean update = false;
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "UPDATE usuario SET rol="+user.getRol()+", nombre="+user.getNombre()+", apellido="
+                    +user.getApellido()+", actividad="+user.isActividad()+", celular="+user.getCelular()+
+                    ", email="+user.getEmail()+", password="+user.getPassword()+","+"WHERE cedula="+user.getCedula();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.execute(sql);
+        update = true;
+        
+        return update;
     }
 
     @Override
     public boolean deleteUser(long cedula) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean delete = false;
+        Usuario user = selectUser(cedula);
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "DELETE FROM usuario WHERE cedula="+user.getCedula();
+        PreparedStatement pstm = con.prepareStatement(sql);  
+        pstm.execute(sql);
+        delete = true;
+        
+        return delete;
     }
     
     private Usuario getUser(ResultSet rs) throws SQLException {

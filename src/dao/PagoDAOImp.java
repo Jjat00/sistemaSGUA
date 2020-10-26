@@ -1,5 +1,9 @@
 package dao;
 
+import ConnectDB.ConnectionBridge;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import model.Pago;
@@ -11,28 +15,88 @@ import model.Pago;
 public class PagoDAOImp implements PagoDAO {
 
     @Override
-    public boolean insertPago(Pago pago) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean insertPago(Pago pay) throws SQLException {
+        boolean registrar = false;
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "INSERT INTO pago VALUES (NULL,"+pay.getIdPago()+","+pay.getFecha()+","
+                     +pay.getIdBanco()+","+pay.getIdFactura()+",)";
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.execute(sql);
+        registrar = true;
+        
+        return registrar;
     }
 
     @Override
     public Pago selectPago(long idPago) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM pago WHERE id = ?"; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = null;
+        Pago pay = null;
+        
+        pstm.setLong(1, idPago);
+        rs = pstm.executeQuery();
+        if (rs.next()) {
+            pay = getPago(rs);
+        }
+        
+        return pay;
     }
 
     @Override
     public ArrayList<Pago> selectAllPagos() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        ArrayList<Pago> listaPago = new ArrayList<>();
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT FROM pago ORDER BY id";
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = null;
+        
+        rs = pstm.executeQuery(sql);
+        while(rs.next()){
+            Pago pay = getPago(rs);
+            listaPago.add(pay);
+        }
+        
+        return listaPago;
     }
 
     @Override
-    public boolean updatePago(Pago pago) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public boolean updatePago(Pago pay) throws SQLException {
+        boolean update = false;
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "UPDATE pago SET fecha="+pay.getFecha()+", id_banco="+pay.getIdBanco()+
+                     ", id_factura="+pay.getIdFactura()+","+"WHERE id="+pay.getIdPago();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.execute(sql);
+        update = true;
+        
+        return update;
     }
 
     @Override
     public boolean deletePago(long idPago) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet.");
+        boolean delete = false;
+        Pago pay = selectPago(idPago);
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "DELETE FROM pago WHERE id="+pay.getIdPago();
+        PreparedStatement pstm = con.prepareStatement(sql);  
+        pstm.execute(sql);
+        delete = true;
+        
+        return delete;
     }
     
+    private Pago getPago(ResultSet rs) throws SQLException {
+        long idPago = rs.getLong("id");
+        String fecha = rs.getString("fecha");
+        long idBanco = rs.getLong("id_banco");
+        long idFactura = rs.getLong("id_factura");
+        Pago pay = new Pago(idPago,fecha,idBanco,idFactura);
+        return pay;
+    }
 }
