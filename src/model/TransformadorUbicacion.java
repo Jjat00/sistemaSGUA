@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
@@ -13,9 +8,9 @@ public class TransformadorUbicacion {
     private long idTransformador;
     private String georeferencia; 
     private String barrio;
-    private int comuna;
+    private short comuna;
 
-    public TransformadorUbicacion(long idTransformador, String georeferencia, String barrio, int comuna){
+    public TransformadorUbicacion(int idTransformador, String georeferencia, String barrio, short comuna){
         this.idTransformador = idTransformador;
         this.georeferencia = georeferencia;
         this.barrio = barrio;
@@ -46,11 +41,11 @@ public class TransformadorUbicacion {
         return this.barrio;
     }
 
-    public void setComuna(int comuna) {
+    public void setComuna(short comuna) {
         this.comuna = comuna;
     }
 
-    public int getComuna() {
+    public short getComuna() {
         return this.comuna;
     }
 

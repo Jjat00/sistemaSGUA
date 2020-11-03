@@ -13,7 +13,7 @@ public interface PagoDAO {
     boolean insertPago(Pago pago) throws SQLException;
 
     // Read pago by idPago
-    public Pago selectPago(long idPago) throws SQLException;
+    public Pago selectPago(int idPago) throws SQLException;
 
     // Read all Pagos
     public ArrayList<Pago> selectAllPagos() throws SQLException;
@@ -22,5 +22,5 @@ public interface PagoDAO {
     public boolean updatePago(Pago pago) throws SQLException;
 
     // Delete pago by idPago
-    public boolean deletePago(long idPago) throws SQLException;    
+    public boolean deletePago(int idPago) throws SQLException;    
 }

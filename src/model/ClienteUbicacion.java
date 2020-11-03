@@ -12,9 +12,9 @@ package model;
 public class ClienteUbicacion {
     private long cedulaCliente;
     private String direccion;
-    private int estrato;
+    private short estrato;
 
-    public ClienteUbicacion(long cedulaCliente, String direccion, int estrato){
+    public ClienteUbicacion(long cedulaCliente, String direccion, short estrato){
         this.cedulaCliente = cedulaCliente;
         this.direccion = direccion;
         this.estrato = estrato;
@@ -36,11 +36,11 @@ public class ClienteUbicacion {
         this.direccion = direccion;
     }
 
-    public int getEstrado() {
+    public short getEstrado() {
         return this.estrato;
     }
 
-    public void setEstrato(int estrato) {
+    public void setEstrato(short estrato) {
         this.estrato = estrato;
     }
     

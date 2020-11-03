@@ -17,12 +17,13 @@ public class Cliente {
     private String email;
     private boolean actividad;
 
-    public Cliente(long cedula, int rol, String nombre, String apellido, long celular, String email) {
+    public Cliente(long cedula, String nombre, String apellido, long celular, String email, boolean actividad) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.celular = celular;
         this.email = email;
+        this.actividad = actividad;
     }
 
     public long getCedula() {

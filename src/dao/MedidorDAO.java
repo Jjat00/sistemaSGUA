@@ -13,7 +13,7 @@ public interface MedidorDAO {
     boolean insertMedidor(Medidor medidor) throws SQLException;
 
     // Read medidor by NoMedidor
-    public Medidor selectMedidor(long NoMedidor) throws SQLException;
+    public Medidor selectMedidor(int NoMedidor) throws SQLException;
 
     // Read all medidores
     public ArrayList<Medidor> selectAllMedidores() throws SQLException;
@@ -22,5 +22,5 @@ public interface MedidorDAO {
     public boolean updateMedidor(Medidor medidor) throws SQLException;
 
     // Delete medidor by NoMedidor
-    public boolean deleteMedidor(long NoMedidor) throws SQLException;    
+    public boolean deleteMedidor(int NoMedidor) throws SQLException;    
 }

@@ -13,7 +13,7 @@ public interface TransformadorDAO {
     boolean insertTransformador(Transformador transformador) throws SQLException;
 
     // Read Transformador by idTransformador
-    public Transformador selectTransformador(long idTransformador) throws SQLException;
+    public Transformador selectTransformador(int idTransformador) throws SQLException;
 
     // Read all transformadores
     public ArrayList<Transformador> selectAllTransformadores() throws SQLException;
@@ -22,5 +22,6 @@ public interface TransformadorDAO {
     public boolean updateTransformador(Transformador transformador) throws SQLException;
 
     // Delete Transformador by idTransformador
-    public boolean deleteTransformador(long idTransformador) throws SQLException;    
+    public boolean deleteTransformador(int idTransformador) throws SQLException;    
+
 }
