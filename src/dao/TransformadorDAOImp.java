@@ -16,24 +16,22 @@ public class TransformadorDAOImp implements TransformadorDAO {
 
     @Override
     public boolean insertTransformador(Transformador trans) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO transformador VALUES ("+trans.getIdTransformador()+","+trans.getActividad()+","
-                     +trans.getMarca()+","+trans.getIdFase()+","+trans.getSnom()+","+trans.getV1nom()+","+trans.getV2nom()+
-                     ","+trans.getFrecuencia()+")";
+        String sql = "INSERT INTO transformador VALUES (" + trans.getIdTransformador() + "," + trans.getActividad() + ",'"
+                     + trans.getMarca() + "'," + trans.getIdFase() + "," + trans.getSnom() + "," + trans.getV1nom() + "," + trans.getV2nom() +
+                     "," + trans.getFrecuencia() + ")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public Transformador selectTransformador(int idTransformador) throws SQLException {
         Transformador trans = null;
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM transformador WHERE UC_transformador = " + idTransformador; 
+        String sql = "SELECT * FROM transformador WHERE id = " + idTransformador; 
         PreparedStatement pstm = con.prepareStatement(sql);
         ResultSet rs = pstm.executeQuery();
         
@@ -49,9 +47,9 @@ public class TransformadorDAOImp implements TransformadorDAO {
         ArrayList<Transformador> listaTransformadores = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM transformador ORDER BY UC_transformador";
+        String sql = "SELECT * FROM transformador ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = pstm.executeQuery(sql);
+        ResultSet rs = pstm.executeQuery();
         
         while(rs.next()){
             Transformador trans = getTransformador(rs);
@@ -63,30 +61,26 @@ public class TransformadorDAOImp implements TransformadorDAO {
 
     @Override
     public boolean updateTransformador(Transformador trans) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE transformador SET actividad="+trans.getActividad()+", marca="+trans.getMarca()+", fases="+trans.getIdFase()+
-                     ", snom="+trans.getSnom()+", v1nom="+trans.getV1nom()+", v2nom="+trans.getV2nom()+", frecuencia="+trans.getFrecuencia()+
-                     " WHERE UC_transformador="+trans.getIdTransformador();
+        String sql = "UPDATE transformador SET actividad = " + trans.getActividad() + ", marca = '" + trans.getMarca() + "', fases=" + trans.getIdFase() +
+                     ", snom=" + trans.getSnom() + ", v1nom=" + trans.getV1nom() + ", v2nom=" + trans.getV2nom() + ", frecuencia=" + trans.getFrecuencia() +
+                     " WHERE id="+trans.getIdTransformador();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteTransformador(int idTransformador) throws SQLException {
-        boolean delete = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM transformador WHERE UC_transformador=" + idTransformador;
+        String sql = "DELETE FROM transformador WHERE id = " + idTransformador;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private Transformador getTransformador(ResultSet rs) throws SQLException {
