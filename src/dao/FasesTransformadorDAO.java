@@ -13,7 +13,7 @@ public interface FasesTransformadorDAO {
     boolean insertFasesTransformador(FasesTransformador fasesTransformador) throws SQLException;
 
     // Read fasesTransformador by idFase
-    public FasesTransformador selectFasesTransformador(int idFase) throws SQLException;
+    public FasesTransformador selectFasesTransformador(short idFase) throws SQLException;
 
     // Read all fasesTransformador
     public ArrayList<FasesTransformador> selectAllFasesTransformador() throws SQLException;
@@ -22,5 +22,5 @@ public interface FasesTransformadorDAO {
     public boolean updateFasesTransformador(FasesTransformador fasesTransformador) throws SQLException;
 
     // Delete fasesTransformador by idFase
-    public boolean deleteFasesTransformador(int idFase) throws SQLException;    
+    public boolean deleteFasesTransformador(short idFase) throws SQLException;    
 }

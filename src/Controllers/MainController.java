@@ -1,7 +1,7 @@
 package controllers;
 
 import dao.UserDAO;
-import dao.UserDAOImpl;
+import dao.UserDAOImp;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import views.*;
@@ -29,7 +29,7 @@ public class MainController {
     private ModificacionExitosa modificacionExitosa;
 
     public MainController(){
-        this.user = new UserDAOImpl();
+        this.user = new UserDAOImp();
         this.gui = new GUI();
         this.gestionDeActivos = new GestionActivos();
         this.gestionDeUsuarios = new GestionUsuariosAdmin();

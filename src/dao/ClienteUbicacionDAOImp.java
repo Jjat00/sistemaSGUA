@@ -19,10 +19,10 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO cliente_ubicacion VALUES (NULL,"+clienteUbicacion.getCedula()+","+clienteUbicacion.getDireccion()+","
-                     +clienteUbicacion.getEstrado()+",)";
+        String sql = "INSERT INTO cliente_ubicacion VALUES ("+clienteUbicacion.getCedula()+","+clienteUbicacion.getDireccion()+","
+                     +clienteUbicacion.getEstrado()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
@@ -30,14 +30,12 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
 
     @Override
     public ClienteUbicacion selectClienteUbicacion(long cedulaCliente) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM cliente_ubicacion WHERE cedula = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
         ClienteUbicacion clienteUbicacion = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM cliente_ubicacion WHERE cedula = " + cedulaCliente; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         
-        pstm.setLong(1, cedulaCliente);
-        rs = pstm.executeQuery();
         if (rs.next()) {
             clienteUbicacion = getClienteUbicacion(rs);
         }
@@ -50,12 +48,11 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
         ArrayList<ClienteUbicacion> listaClienteUbicacion = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM cliente_ubicacion ORDER BY cedula";
+        String sql = "SELECT * FROM cliente_ubicacion ORDER BY cedula";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
-        while(rs.next()){
+        while(rs.next()) {
             ClienteUbicacion clienteUbicacion = getClienteUbicacion(rs);
             listaClienteUbicacion.add(clienteUbicacion);
         }
@@ -68,10 +65,10 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
         boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE cliente_ubicacion SET direccion="+clienteUbicacion.getDireccion()+", estrato="+clienteUbicacion.getEstrado()+
-                     ","+"WHERE cedula="+clienteUbicacion.getCedula();
+        String sql = "UPDATE cliente_ubicacion SET direccion = "+clienteUbicacion.getDireccion()+", estrato="+clienteUbicacion.getEstrado()
+                +" WHERE cedula = "+clienteUbicacion.getCedula();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
@@ -80,12 +77,11 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
     @Override
     public boolean deleteClienteUbicacion(long cedulaCliente) throws SQLException {
         boolean delete = false;
-        ClienteUbicacion clienteUbicacion = selectClienteUbicacion(cedulaCliente);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM cliente_ubicacion WHERE cedula="+clienteUbicacion.getCedula();
+        String sql = "DELETE * FROM cliente_ubicacion WHERE cedula = " + cedulaCliente;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
@@ -94,7 +90,7 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
     private ClienteUbicacion getClienteUbicacion(ResultSet rs) throws SQLException {
         long cedulaCliente = rs.getLong("cedula");
         String direccion = rs.getString("direccion");
-        int estrato = rs.getInt("estrato");
+        short estrato = rs.getShort("estrato");
         ClienteUbicacion clienteUbicacion  = new ClienteUbicacion(cedulaCliente,direccion,estrato);
         return clienteUbicacion;
     }

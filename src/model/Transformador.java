@@ -10,17 +10,17 @@ package model;
  * @author jjat02
  */
 public class Transformador {
-    private long idTransformador;
+    private int idTransformador;
     private boolean actividad;
     private String marca;
-    private int idFase;
+    private short idFase;
     private float snom;
     private float v1nom;
     private float v2nom;
     private float frecuencia;
 
-    public Transformador(long idTransformador, boolean actividad, String marca, 
-        int idFase, float snom, float v1nom, float v2nom, float frecuencia) {
+    public Transformador(int idTransformador, boolean actividad, String marca, 
+        short idFase, float snom, float v1nom, float v2nom, float frecuencia) {
         this.idTransformador = idTransformador;
         this.actividad = actividad;
         this.marca = marca;
@@ -31,11 +31,11 @@ public class Transformador {
         this.frecuencia = frecuencia;
     }
 
-    public void setIdTransformador(long idTransformador) {
+    public void setIdTransformador(int idTransformador) {
         this.idTransformador = idTransformador;
     }
 
-    public long getIdTransformador() {
+    public int getIdTransformador() {
         return this.idTransformador;
     }
 
@@ -55,11 +55,11 @@ public class Transformador {
         return this.marca;
     }
     
-    public void setIdFase(int idFase) {
+    public void setIdFase(short idFase) {
         this.idFase = idFase;
     }
 
-    public int getIdFase() {
+    public short getIdFase() {
         return this.idFase;
     }
     

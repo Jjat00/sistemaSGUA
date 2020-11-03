@@ -6,7 +6,7 @@ package model;
 public class Usuario {
     
     private long cedula;
-    private int rol;
+    private short rol;
     private String nombre;
     private String apellido;
     private boolean actividad;
@@ -14,7 +14,7 @@ public class Usuario {
     private String email;
     private String password;
 
-    public Usuario(long cedula, int rol, String nombre, String apellido, boolean actividad, long celular, String email, String password) {
+    public Usuario(long cedula, short rol, String nombre, String apellido, boolean actividad, long celular, String email, String password) {
         this.cedula = cedula;
         this.rol = rol;
         this.nombre = nombre;
@@ -33,11 +33,11 @@ public class Usuario {
         this.cedula = cedula;
     }
 
-    public int getRol() {
+    public short getRol() {
         return rol;
     }
 
-    public void setRol(int rol) {
+    public void setRol(short rol) {
         this.rol = rol;
     }
 

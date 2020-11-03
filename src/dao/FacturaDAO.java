@@ -13,7 +13,7 @@ public interface FacturaDAO {
     boolean insertFactura(Factura factura) throws SQLException;
 
     // Read factura by NoCuenta
-    public Factura selectFactura(long NoCuenta) throws SQLException;
+    public Factura selectFactura(int NoCuenta) throws SQLException;
 
     // Read all facturas
     public ArrayList<Factura> selectAllFacturas() throws SQLException;
@@ -22,5 +22,5 @@ public interface FacturaDAO {
     public boolean updateFactura(Factura factura) throws SQLException;
 
     // Delete factura by NoCuenta
-    public boolean deleteFactura(long NoCuenta) throws SQLException;    
+    public boolean deleteFactura(int NoCuenta) throws SQLException;    
 }

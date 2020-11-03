@@ -2,6 +2,7 @@ package dao;
 
 import ConnectDB.ConnectionBridge;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,25 +20,23 @@ public class PagoDAOImp implements PagoDAO {
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO pago VALUES (NULL,"+pay.getIdPago()+","+pay.getFecha()+","
-                     +pay.getIdBanco()+","+pay.getIdFactura()+",)";
+        String sql = "INSERT INTO pago VALUES ("+pay.getIdPago()+","+pay.getFecha()+","
+                     +pay.getIdBanco()+","+pay.getIdFactura()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
     }
 
     @Override
-    public Pago selectPago(long idPago) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM pago WHERE id = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+    public Pago selectPago(int idPago) throws SQLException {
         Pago pay = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM pago WHERE id = " + idPago; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         
-        pstm.setLong(1, idPago);
-        rs = pstm.executeQuery();
         if (rs.next()) {
             pay = getPago(rs);
         }
@@ -50,11 +49,10 @@ public class PagoDAOImp implements PagoDAO {
         ArrayList<Pago> listaPago = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM pago ORDER BY id";
+        String sql = "SELECT * FROM pago ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             Pago pay = getPago(rs);
             listaPago.add(pay);
@@ -69,33 +67,32 @@ public class PagoDAOImp implements PagoDAO {
         
         Connection con = ConnectionBridge.getConnection();
         String sql = "UPDATE pago SET fecha="+pay.getFecha()+", id_banco="+pay.getIdBanco()+
-                     ", id_factura="+pay.getIdFactura()+","+"WHERE id="+pay.getIdPago();
+                     ", id_factura="+pay.getIdFactura()+" WHERE id="+pay.getIdPago();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
     }
 
     @Override
-    public boolean deletePago(long idPago) throws SQLException {
+    public boolean deletePago(int idPago) throws SQLException {
         boolean delete = false;
-        Pago pay = selectPago(idPago);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM pago WHERE id="+pay.getIdPago();
+        String sql = "DELETE * FROM pago WHERE id=" + idPago;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
     }
     
     private Pago getPago(ResultSet rs) throws SQLException {
-        long idPago = rs.getLong("id");
-        String fecha = rs.getString("fecha");
-        long idBanco = rs.getLong("id_banco");
-        long idFactura = rs.getLong("id_factura");
+        int idPago = rs.getInt("id");
+        Date fecha = rs.getDate("fecha");
+        short idBanco = rs.getShort("metodo_pago");
+        int idFactura = rs.getInt("id_factura");
         Pago pay = new Pago(idPago,fecha,idBanco,idFactura);
         return pay;
     }

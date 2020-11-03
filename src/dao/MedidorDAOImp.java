@@ -2,6 +2,7 @@ package dao;
 
 import ConnectDB.ConnectionBridge;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,25 +20,22 @@ public class MedidorDAOImp implements MedidorDAO {
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO medidor VALUES (NULL,"+medidor.getNoMedidor()+","+medidor.getLecturaActual()+
-                     ","+medidor.getLecturaAnterior()+","+medidor.getConsumoActual()+","+medidor.getFechaMedicion()+",)";
+        String sql = "INSERT INTO medidor VALUES ("+medidor.getNoMedidor()+","+medidor.getLecturaActual()+
+                     ","+medidor.getLecturaAnterior()+","+medidor.getConsumoActual()+","+medidor.getFechaMedicion()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
     }
 
     @Override
-    public Medidor selectMedidor(long NoMedidor) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM medidor WHERE numero = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+    public Medidor selectMedidor(int NoMedidor) throws SQLException {
         Medidor medidor = null;
-        
-        pstm.setLong(1, NoMedidor);
-        rs = pstm.executeQuery();
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM medidor WHERE numero = " + NoMedidor; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         if (rs.next()) {
             medidor = getMedidor(rs);
         }
@@ -50,11 +48,10 @@ public class MedidorDAOImp implements MedidorDAO {
         ArrayList<Medidor> listaMedidor = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM medidor ORDER BY numero";
+        String sql = "SELECT * FROM medidor ORDER BY numero";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             Medidor medidor = getMedidor(rs);
             listaMedidor.add(medidor);
@@ -69,34 +66,34 @@ public class MedidorDAOImp implements MedidorDAO {
         
         Connection con = ConnectionBridge.getConnection();
         String sql = "UPDATE medidor SET lectura_actual="+medidor.getLecturaActual()+", lectura_anterior="+medidor.getLecturaAnterior()+
-                     ", consumo_actual="+medidor.getConsumoActual()+", fecha_medicion="+medidor.getFechaMedicion()+","+"WHERE numero="+medidor.getNoMedidor();
+                     ", consumo_actual="+medidor.getConsumoActual()+", fecha_medicion="+medidor.getFechaMedicion()+" WHERE numero="+medidor.getNoMedidor();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
     }
 
     @Override
-    public boolean deleteMedidor(long NoMedidor) throws SQLException {
+    public boolean deleteMedidor(int NoMedidor) throws SQLException {
         boolean delete = false;
         Medidor medidor = selectMedidor(NoMedidor);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM medidor WHERE numero="+medidor.getNoMedidor();
+        String sql = "DELETE * FROM medidor WHERE numero=" + NoMedidor;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
     }
     
     private Medidor getMedidor(ResultSet rs) throws SQLException {
-        long NoMedidor = rs.getLong("numero");
+        int NoMedidor = rs.getInt("id");
         float lecturaActual = rs.getFloat("lectura_actual");
         float lecturaAnterior = rs.getFloat("lectura_anterior");
         int consumoActual = rs.getInt("consumo_actual");
-        String fechaMedicion = rs.getString("fecha_medicion");
+        Date fechaMedicion = rs.getDate("fecha_medicion");
         Medidor medidor = new Medidor(NoMedidor,lecturaActual,lecturaAnterior,consumoActual,fechaMedicion);
         return medidor;
     }

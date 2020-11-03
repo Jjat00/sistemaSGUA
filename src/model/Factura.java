@@ -11,17 +11,16 @@ package model;
  */
 public class Factura {
 
-    private long NoCuenta;
+    private int NoCuenta;
     private long cedulaCliente;
-    private long NoMedidor;
     private boolean estadoPago;
     private int tipoUso;
+    private int NoMedidor;
     private float valorUnitario;
     private float subsidio;
-    private float ajustePeso;
 
-    public Factura(long NoCuenta, long cedulaCliente, long NoMedidor, boolean estadoPago,
-                    int tipoUso, float valorUnitario, float subsidio, float ajustePeso) {                        
+    public Factura(int NoCuenta, long cedulaCliente, int NoMedidor, boolean estadoPago,
+                    int tipoUso, float valorUnitario, float subsidio) {                        
         this.NoCuenta = NoCuenta;
         this.cedulaCliente = cedulaCliente;
         this.NoMedidor = NoMedidor;
@@ -29,14 +28,13 @@ public class Factura {
         this.tipoUso = tipoUso;
         this.valorUnitario = valorUnitario;
         this.subsidio = subsidio;
-        this.ajustePeso = ajustePeso;
     }
 
-    public void setNoCuenta(long NoCuenta) {
+    public void setNoCuenta(int NoCuenta) {
         this.NoCuenta = NoCuenta;
     }
-
-    public long getNoCuenta() {
+    
+    public int getNoCuenta() {
         return this.NoCuenta;
     }
 
@@ -48,11 +46,11 @@ public class Factura {
         return this.cedulaCliente;
     }
 
-    public void setNoMedidor(long NoMedidor) {
+    public void setNoMedidor(int NoMedidor) {
         this.NoMedidor = NoMedidor;
     }
 
-    public long getNoMedidor() {
+    public int getNoMedidor() {
         return this.NoMedidor;
     }
 
@@ -88,14 +86,6 @@ public class Factura {
         return this.subsidio;
     }
 
-    public void setAjustePeso(float ajustePeso) {
-        this.ajustePeso = ajustePeso;
-    }
-
-    public float getAjustePeso() {
-        return this.ajustePeso;
-    }
-
     @Override
     public String toString() {
         return "Factura: {" 
@@ -105,7 +95,6 @@ public class Factura {
             + ",\n\ttipoUso: " + this.tipoUso 
             + ",\n\tvalorUnitario: " + this.valorUnitario 
             + ",\n\tsubsidio: " + this.subsidio 
-            + ",\n\tajustePeso: " + this.ajustePeso 
             + "\n}";
     }
 

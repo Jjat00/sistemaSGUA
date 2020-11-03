@@ -5,19 +5,21 @@
  */
 package model;
 
+import java.sql.Date;
+
 /**
  *
  * @Modelo para las mediciones de consumo del cliente
  */
 public class Medidor {
-    private long NoMedidor;
+    private int NoMedidor;
     private float lecturaActual;
     private float lecturaAnterior;
     private int consumoActual;
-    private String fechaMedicion;
+    private Date fechaMedicion;
     
-    public Medidor(long NoMedidor, float lecturaActual, float lecturaAnterior, 
-                    int consumoActual, String fechaMedicion){
+    public Medidor(int NoMedidor, float lecturaActual, float lecturaAnterior, 
+                    int consumoActual, Date fechaMedicion){
         
         this.NoMedidor = NoMedidor;
         this.lecturaActual =  lecturaActual;
@@ -26,11 +28,11 @@ public class Medidor {
         this.fechaMedicion = fechaMedicion;
     }
 
-    public void setNoMedidor(long NoMedidor) {
+    public void setNoMedidor(int NoMedidor) {
         this.NoMedidor = NoMedidor;
     }
 
-    public long getNoMedidor() {
+    public int getNoMedidor() {
         return this.NoMedidor;
     }
 
@@ -58,11 +60,11 @@ public class Medidor {
         return this.consumoActual;
     }
 
-    public void setFechaMedicion(String fechaMedicion) {
+    public void setFechaMedicion(Date fechaMedicion) {
         this.fechaMedicion = fechaMedicion;
     }
 
-    public String getFechaMedicion() {
+    public Date getFechaMedicion() {
         return this.fechaMedicion;
     }
 

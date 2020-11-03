@@ -19,26 +19,24 @@ public class FacturaDAOImp implements FacturaDAO {
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO factura VALUES (NULL,"+factura.getNoCuenta()+","+factura.getCedulaCliente()+","
+        String sql = "INSERT INTO factura VALUES ("+factura.getNoCuenta()+","+factura.getCedulaCliente()+","
                      +factura.getNoMedidor()+","+factura.getEstadoPago()+","+factura.getTipoUso()+","
-                     +factura.getValorUnitario()+","+factura.getSubsidio()+","+factura.getAjustePeso()+",)";
+                     +factura.getValorUnitario()+","+factura.getSubsidio()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
     }
 
     @Override
-    public Factura selectFactura(long NoCuenta) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM factura WHERE cuenta = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+    public Factura selectFactura(int NoCuenta) throws SQLException {
         Factura factura = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM factura WHERE cuenta = " + NoCuenta; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         
-        pstm.setLong(1, NoCuenta);
-        rs = pstm.executeQuery();
         if (rs.next()) {
             factura = getFactura(rs);
         }
@@ -51,11 +49,10 @@ public class FacturaDAOImp implements FacturaDAO {
         ArrayList<Factura> listaFactura = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM factura ORDER BY cuenta";
+        String sql = "SELECT * FROM factura ORDER BY cuenta";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             Factura factura = getFactura(rs);
             listaFactura.add(factura);
@@ -71,38 +68,36 @@ public class FacturaDAOImp implements FacturaDAO {
         Connection con = ConnectionBridge.getConnection();
         String sql = "UPDATE factura SET cedula_cliente="+factura.getCedulaCliente()+", no_medidor_m1="+factura.getNoMedidor()+
                      ", pago="+factura.getEstadoPago()+", uso="+factura.getTipoUso()+", valor_unitario="+factura.getValorUnitario()+
-                     ", subsidio="+factura.getSubsidio()+", ajuste_peso="+factura.getAjustePeso()+","+"WHERE cuenta="+factura.getNoCuenta();
+                     ", subsidio="+factura.getSubsidio()+" WHERE cuenta="+factura.getNoCuenta();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
     }
 
     @Override
-    public boolean deleteFactura(long NoCuenta) throws SQLException {
+    public boolean deleteFactura(int NoCuenta) throws SQLException {
         boolean delete = false;
-        Factura factura = selectFactura(NoCuenta);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM factura WHERE cuenta="+factura.getNoCuenta();
+        String sql = "DELETE * FROM factura WHERE cuenta=" + NoCuenta;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
     }
     
     private Factura getFactura(ResultSet rs) throws SQLException {
-        long NoCuenta = rs.getLong("cuenta");
+        int NoCuenta = rs.getInt("id");
         long cedulaCliente = rs.getLong("cedula_cliente");
-        long NoMedidor = rs.getLong("no_medidor_m1");
+        int NoMedidor = rs.getInt("medidor");
         boolean estadoPago = rs.getBoolean("pago");
         int tipoUso = rs.getInt("uso");
         float valorUnitario = rs.getFloat("valor_unitario");
         float subsidio = rs.getFloat("subsidio");
-        float ajustePeso = rs.getFloat("ajuste_peso");
-        Factura factura = new Factura(NoCuenta,cedulaCliente,NoMedidor,estadoPago,tipoUso,valorUnitario,subsidio,ajustePeso);
+        Factura factura = new Factura(NoCuenta,cedulaCliente,NoMedidor,estadoPago,tipoUso,valorUnitario,subsidio);
         return factura;
     }
 }

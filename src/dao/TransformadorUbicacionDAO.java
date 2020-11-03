@@ -13,7 +13,7 @@ public interface TransformadorUbicacionDAO {
     boolean insertTransformadorUbicacion(TransformadorUbicacion transformadorUbicacion) throws SQLException;
 
     // Read transformadorUbicacion by idTransformador
-    public TransformadorUbicacion selectTransformadorUbicacion(long idTransformador) throws SQLException;
+    public TransformadorUbicacion selectTransformadorUbicacion(int idTransformador) throws SQLException;
 
     // Read all transformadorUbicacion
     public ArrayList<TransformadorUbicacion> selectAllTransformadores() throws SQLException;
@@ -22,5 +22,5 @@ public interface TransformadorUbicacionDAO {
     public boolean updateTransformadorUbicacion(TransformadorUbicacion transformadorUbicacion) throws SQLException;
 
     // Delete transformadorUbicacion by idTransformador
-    public boolean deleteTransformadorUbicacion(long idTransformador) throws SQLException;    
+    public boolean deleteTransformadorUbicacion(int idTransformador) throws SQLException;    
 }

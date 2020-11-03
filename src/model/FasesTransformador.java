@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
@@ -10,19 +5,19 @@ package model;
  * Modelo para la tabla FasesTransformador
  */
 public class FasesTransformador {
-    private int idFase;
+    private short idFase;
     private String tipo;
 
-    public FasesTransformador(int idFase, String tipo){
+    public FasesTransformador(short idFase, String tipo){
         this.idFase = idFase;
         this.tipo = tipo;
     }
 
-    public int getIdFase() {
+    public short getIdFase() {
         return idFase;
     }
 
-    public void setIdFase(int idFase) {
+    public void setIdFase(short idFase) {
         this.idFase = idFase;
     }
 

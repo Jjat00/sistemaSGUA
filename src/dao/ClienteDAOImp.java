@@ -16,28 +16,25 @@ public class ClienteDAOImp implements ClienteDAO{
 
     @Override
     public boolean insertCliente(Cliente cliente) throws SQLException {
-        boolean registrar = false;
-        
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO cliente VALUES (NULL,"+cliente.getCedula()+","+cliente.getNombre()+","
-                     +cliente.getApellido()+","+cliente.getCelular()+","+cliente.getEmail()+",)"+cliente.getActividad()+",";
+        String sql = "INSERT INTO cliente VALUES ('"+cliente.getCedula()+
+                "', '"+cliente.getNombre()+"', '"
+                     +cliente.getApellido()+"', "+cliente.getCelular()+
+                ", "+cliente.getActividad()+", '"+cliente.getEmail()+"')";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public Cliente selectCliente(long cedula) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM cliente WHERE cedula = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
         Cliente cliente = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM cliente WHERE cedula = " + cedula; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         
-        pstm.setLong(1, cedula);
-        rs = pstm.executeQuery();
         if (rs.next()) {
             cliente = getCliente(rs);
         }
@@ -50,11 +47,10 @@ public class ClienteDAOImp implements ClienteDAO{
         ArrayList<Cliente> listaCliente = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM cliente ORDER BY cedula";
+        String sql = "SELECT * FROM cliente ORDER BY cedula";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             Cliente cliente = getCliente(rs);
             listaCliente.add(cliente);
@@ -65,30 +61,23 @@ public class ClienteDAOImp implements ClienteDAO{
 
     @Override
     public boolean updateCliente(Cliente cliente) throws SQLException {
-        boolean update = false;
-        
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE cliente SET nombre="+cliente.getNombre()+", apellido="+cliente.getApellido()+", celular="
-                    +cliente.getCelular()+", email="+cliente.getEmail()+", actividad="+cliente.getActividad()+","+"WHERE cedula="+cliente.getCedula();
+        String sql = "UPDATE cliente SET nombre='"+cliente.getNombre()+"', apellido='"+cliente.getApellido()+"', celular="
+                    +cliente.getCelular()+", email='"+cliente.getEmail()+"', actividad="+cliente.getActividad()+" WHERE cedula="+cliente.getCedula();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteCliente(long cedula) throws SQLException {
-        boolean delete = false;
-        Cliente cliente = selectCliente(cedula);
-        
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM cliente WHERE cedula="+cliente.getCedula();
+        String sql = "DELETE FROM cliente WHERE cedula=" + cedula;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
-        delete = true;
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private Cliente getCliente(ResultSet rs) throws SQLException {

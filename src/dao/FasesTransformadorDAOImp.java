@@ -19,24 +19,22 @@ public class FasesTransformadorDAOImp implements FasesTransformadorDAO {
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO fases VALUES (NULL,"+fase.getIdFase()+","+fase.getTipo()+",)";
+        String sql = "INSERT INTO fases VALUES ("+fase.getIdFase()+","+fase.getTipo()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
     }
 
     @Override
-    public FasesTransformador selectFasesTransformador(int idFase) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM fases WHERE id = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+    public FasesTransformador selectFasesTransformador(short idFase) throws SQLException {
         FasesTransformador fase = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM fases WHERE id = " + idFase; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         
-        pstm.setLong(1, idFase);
-        rs = pstm.executeQuery();
         if (rs.next()) {
             fase = getFasesTransformador(rs);
         }
@@ -49,11 +47,10 @@ public class FasesTransformadorDAOImp implements FasesTransformadorDAO {
         ArrayList<FasesTransformador> listaFasesTransformador = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM fases ORDER BY id";
+        String sql = "SELECT * FROM fases ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             FasesTransformador fase = getFasesTransformador(rs);
             listaFasesTransformador.add(fase);
@@ -67,30 +64,29 @@ public class FasesTransformadorDAOImp implements FasesTransformadorDAO {
         boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE fases SET tipo="+fase.getTipo()+","+"WHERE id="+fase.getIdFase();
+        String sql = "UPDATE fases SET tipo="+fase.getTipo()+" WHERE id="+fase.getIdFase();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
     }
 
     @Override
-    public boolean deleteFasesTransformador(int idFase) throws SQLException {
+    public boolean deleteFasesTransformador(short idFase) throws SQLException {
         boolean delete = false;
-        FasesTransformador fase = selectFasesTransformador(idFase);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM fases WHERE id="+fase.getIdFase();
+        String sql = "DELETE * FROM fases WHERE id=" + idFase;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
     }
     
     private FasesTransformador getFasesTransformador(ResultSet rs) throws SQLException {
-        int idFase = rs.getInt("id");
+        short idFase = rs.getShort("id");
         String tipo = rs.getString("tipo");
         FasesTransformador fase = new FasesTransformador(idFase,tipo);
         return fase;

@@ -19,26 +19,23 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
         boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO transformador_ubicacion VALUES (NULL,"+transformadorUbicacion.getIdTransformador()+
+        String sql = "INSERT INTO transformador_ubicacion VALUES ("+transformadorUbicacion.getIdTransformador()+
                      ","+transformadorUbicacion.getGeoreferencia()+","+transformadorUbicacion.getBarrio()+","
-                     +transformadorUbicacion.getComuna()+",)";
+                     +transformadorUbicacion.getComuna()+")";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         registrar = true;
         
         return registrar;
     }
 
     @Override
-    public TransformadorUbicacion selectTransformadorUbicacion(long idTransformador) throws SQLException {
-        Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM transformador_ubicacion WHERE id = ?"; 
-        PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+    public TransformadorUbicacion selectTransformadorUbicacion(int idTransformador) throws SQLException {
         TransformadorUbicacion transformadorUbicacion = null;
-        
-        pstm.setLong(1, idTransformador);
-        rs = pstm.executeQuery();
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM transformador_ubicacion WHERE id = " + idTransformador; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        ResultSet rs = pstm.executeQuery();
         if (rs.next()) {
             transformadorUbicacion = getTransformadorUbicacion(rs);
         }
@@ -51,11 +48,10 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
         ArrayList<TransformadorUbicacion> listaUbicacion = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT FROM transformador_ubicacion ORDER BY id";
+        String sql = "SELECT * FROM transformador_ubicacion ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery(sql);
         while(rs.next()){
             TransformadorUbicacion transformadorUbicacion = getTransformadorUbicacion(rs);
             listaUbicacion.add(transformadorUbicacion);
@@ -70,23 +66,22 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
         
         Connection con = ConnectionBridge.getConnection();
         String sql = "UPDATE transformador_ubicacion SET georeferenciacion="+transformadorUbicacion.getGeoreferencia()+", barrio="+transformadorUbicacion.getBarrio()+
-                     ", comuna="+transformadorUbicacion.getComuna()+","+"WHERE id="+transformadorUbicacion.getIdTransformador();
+                     ", comuna="+transformadorUbicacion.getComuna()+" WHERE id="+transformadorUbicacion.getIdTransformador();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.execute(sql);
+        pstm.executeQuery();
         update = true;
         
         return update;
     }
 
     @Override
-    public boolean deleteTransformadorUbicacion(long idTransformador) throws SQLException {
+    public boolean deleteTransformadorUbicacion(int idTransformador) throws SQLException {
         boolean delete = false;
-        TransformadorUbicacion tranformadorUbicacion = selectTransformadorUbicacion(idTransformador);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE FROM transformador_ubicacion WHERE id="+tranformadorUbicacion.getIdTransformador();
+        String sql = "DELETE * FROM transformador_ubicacion WHERE id=" + idTransformador;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.execute(sql);
+        pstm.executeQuery();
         delete = true;
         
         return delete;
@@ -94,10 +89,10 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
     
 
     private TransformadorUbicacion getTransformadorUbicacion(ResultSet rs) throws SQLException {
-        long idTransformador = rs.getLong("id");
+        int idTransformador = rs.getInt("id");
         String georeferencia = rs.getString("georeferenciacion");
         String barrio = rs.getString("barrio");
-        int comuna = rs.getInt("comuna");
+        short comuna = rs.getShort("comuna");
         TransformadorUbicacion transformadorUbicacion = new TransformadorUbicacion(idTransformador,georeferencia,barrio,comuna);
         return transformadorUbicacion;
     }

@@ -5,53 +5,55 @@
  */
 package model;
 
+import java.sql.Date;
+
 /**
  *
  * @author jjat02
  */
 public class Pago {
-    private long idPago;
-    private String fecha;
-    private long idBanco;
-    private long idFactura;
+    private int idPago;
+    private Date fecha;
+    private short idBanco;
+    private int idFactura;
 
-    public Pago(long idPago, String fecha, long idBanco, long idFactura){
+    public Pago(int idPago, Date fecha, short idBanco, int idFactura) {
         this.idPago = idPago;
         this.fecha = fecha;
         this.idBanco = idBanco;
         this.idFactura = idFactura;
     }
-    
-    public void setIdPago(long idPago) {
+
+    public int getIdPago() {
+        return idPago;
+    }
+
+    public void setIdPago(int idPago) {
         this.idPago = idPago;
     }
-    
-    public long getIdPago() {
-        return this.idPago;
+
+    public Date getFecha() {
+        return fecha;
     }
-    
-    public void setFecha(String fecha) {
+
+    public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
-    
-    public String getFecha() {
-        return this.fecha;
+
+    public short getIdBanco() {
+        return idBanco;
     }
-    
-    public void setIdBanco(long idBanco) {
+
+    public void setIdBanco(short idBanco) {
         this.idBanco = idBanco;
     }
-    
-    public long getIdBanco() {
-        return this.idBanco;
+
+    public int getIdFactura() {
+        return idFactura;
     }
-    
-    public void setIdFactura(long idFactura) {
+
+    public void setIdFactura(int idFactura) {
         this.idFactura = idFactura;
-    }
-    
-    public long getIdFactura() {
-        return this.idFactura;
     }
 
     @Override
