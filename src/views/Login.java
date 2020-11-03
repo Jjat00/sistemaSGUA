@@ -39,12 +39,12 @@ public class Login extends javax.swing.JPanel {
     public void setbtnIngresoLogin(JButton btnIngresoLogin){
         this.btnIngresoLogin = btnIngresoLogin;        
     }
-    
-    public JTextField getjtIngresoContrasenia(){
+
+    public JPasswordField getJtIngresoContrasenia() {
         return jtIngresoContrasenia;
     }
-    
-    public void setjtIngresoContrasenia(JTextField jtIngresoContrasenia){
+
+    public void setJtIngresoContrasenia(JPasswordField jtIngresoContrasenia) {
         this.jtIngresoContrasenia = jtIngresoContrasenia;
     }
     
@@ -54,6 +54,10 @@ public class Login extends javax.swing.JPanel {
     
     public void setjtIngresoUser(JTextField jtIngresoUser){
         this.jtIngresoUser = jtIngresoUser;
+    }
+
+    public JLabel getJlInfoIncorrecta() {
+        return jlInfoIncorrecta;
     }
 
     /**
@@ -68,11 +72,12 @@ public class Login extends javax.swing.JPanel {
         jpBackgroundLogin = new javax.swing.JPanel();
         jpBackgroundLogin1 = new javax.swing.JPanel();
         jtIngresoUser = new javax.swing.JTextField();
-        jtIngresoContrasenia = new javax.swing.JTextField();
         jlUsuario = new javax.swing.JLabel();
         jlContrasenia = new javax.swing.JLabel();
         jlIconUser = new javax.swing.JLabel();
         btnIngresoLogin = new javax.swing.JButton();
+        jtIngresoContrasenia = new javax.swing.JPasswordField();
+        jlInfoIncorrecta = new javax.swing.JLabel();
         jlIniciarSesion = new javax.swing.JLabel();
         btnExitLogin = new javax.swing.JButton();
 
@@ -100,6 +105,9 @@ public class Login extends javax.swing.JPanel {
         btnIngresoLogin.setText("Ingresar");
         btnIngresoLogin.setBorderPainted(false);
 
+        jlInfoIncorrecta.setForeground(new java.awt.Color(255, 255, 255));
+        jlInfoIncorrecta.setText("Usuario o contraseña incorrecta");
+
         javax.swing.GroupLayout jpBackgroundLogin1Layout = new javax.swing.GroupLayout(jpBackgroundLogin1);
         jpBackgroundLogin1.setLayout(jpBackgroundLogin1Layout);
         jpBackgroundLogin1Layout.setHorizontalGroup(
@@ -111,15 +119,16 @@ public class Login extends javax.swing.JPanel {
             .addGroup(jpBackgroundLogin1Layout.createSequentialGroup()
                 .addGroup(jpBackgroundLogin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpBackgroundLogin1Layout.createSequentialGroup()
+                        .addGap(117, 117, 117)
+                        .addComponent(btnIngresoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jpBackgroundLogin1Layout.createSequentialGroup()
                         .addGap(63, 63, 63)
-                        .addGroup(jpBackgroundLogin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jpBackgroundLogin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jlContrasenia)
                             .addComponent(jlUsuario)
-                            .addComponent(jtIngresoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtIngresoUser, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jpBackgroundLogin1Layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(btnIngresoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jtIngresoUser, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE)
+                            .addComponent(jtIngresoContrasenia)
+                            .addComponent(jlInfoIncorrecta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(66, Short.MAX_VALUE))
         );
         jpBackgroundLogin1Layout.setVerticalGroup(
@@ -135,7 +144,9 @@ public class Login extends javax.swing.JPanel {
                 .addComponent(jlContrasenia)
                 .addGap(18, 18, 18)
                 .addComponent(jtIngresoContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jlInfoIncorrecta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                 .addComponent(btnIngresoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(58, 58, 58))
         );
@@ -201,11 +212,12 @@ public class Login extends javax.swing.JPanel {
     private javax.swing.JButton btnIngresoLogin;
     private javax.swing.JLabel jlContrasenia;
     private javax.swing.JLabel jlIconUser;
+    private javax.swing.JLabel jlInfoIncorrecta;
     private javax.swing.JLabel jlIniciarSesion;
     private javax.swing.JLabel jlUsuario;
     private javax.swing.JPanel jpBackgroundLogin;
     private javax.swing.JPanel jpBackgroundLogin1;
-    private javax.swing.JTextField jtIngresoContrasenia;
+    private javax.swing.JPasswordField jtIngresoContrasenia;
     private javax.swing.JTextField jtIngresoUser;
     // End of variables declaration//GEN-END:variables
 }

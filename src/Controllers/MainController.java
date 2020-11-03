@@ -1,10 +1,8 @@
 package controllers;
 
-import dao.UserDAO;
-import dao.UserDAOImp;
 import java.awt.event.ActionEvent;
-import javax.swing.JOptionPane;
-import views.*;
+import views.GUI;
+import views.Principal;
 
 /**
  *
@@ -12,53 +10,29 @@ import views.*;
  */
 public class MainController {
     
-    private UserDAO user;
-    private GUI gui;
-    private GestionActivos gestionDeActivos;
-    private GestionUsuariosAdmin gestionDeUsuarios;
-    private InicioAdmin inicioAdmin;
-    private InicioGerente inicioGerente;
-    private InicioOperador inicioOperador;
-    private Login login;
+    private GUI ventana;
     private Principal principal;
-    private RegistroUsuarios registroUsuarios;
-    private ModificarUsuarios modificarUsuarios;
-    private SesionAdmin sesionAdmin;
-    private SesionGerente sesionGerente;
-    private RegistroExitoso registroExitoso;
-    private ModificacionExitosa modificacionExitosa;
 
-    public MainController(){
-        this.user = new UserDAOImp();
-        this.gui = new GUI();
-        this.gestionDeActivos = new GestionActivos();
-        this.gestionDeUsuarios = new GestionUsuariosAdmin();
-        this.inicioAdmin = new InicioAdmin();
-        this.inicioGerente = new InicioGerente();
-        this.inicioOperador = new InicioOperador();
-        this.login = new Login();
+    public MainController(GUI ventana){
         this.principal = new Principal();
-        this.registroUsuarios = new RegistroUsuarios();
-        this.modificarUsuarios = new ModificarUsuarios();
-        this.sesionAdmin = new SesionAdmin();
-        this.sesionGerente = new SesionGerente();
-        this.registroExitoso = new RegistroExitoso();
-        this.modificacionExitosa = new ModificacionExitosa();
+        this.ventana = ventana;
+        this.cambiarPanel();
+        this.ventana.setVisible(true);
         
-               
-        gui.getTempButton().addActionListener((ActionEvent e) -> {
-            JOptionPane.showMessageDialog(null, "Si ves esto borra el boton");
-        });
-        
-        handlerObtenerUsuario();
-        gui.setVisible(true);
+        this.principal.getbtnIngresarInicio()
+                .addActionListener(new Controllers.LoginController(ventana));
+        this.principal.getbtnCerrarPrincipal()
+                .addActionListener((ActionEvent e) -> {
+                    System.exit(0); // Cerrar ventana
+                });
     }
-
-    private void handlerObtenerUsuario() {
-        try {
-            System.out.println(this.user.selectUser(1144111111).toString()); ;
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    
+    private void cambiarPanel() {
+        this.ventana.setSize(principal.getWidth() + 18, principal.getHeight() + 46);
+        this.ventana.setLocationRelativeTo(null);
+        this.ventana.getMainPanel().removeAll();
+        this.ventana.getMainPanel().add(principal);
+        this.ventana.getMainPanel().revalidate();
+        this.ventana.repaint();
     }
 }

@@ -5,6 +5,7 @@
  */
 package views;
 
+import java.awt.Color;
 import javax.swing.JButton;
 
 /**
@@ -18,6 +19,9 @@ public class SesionGerente extends javax.swing.JPanel {
      */
     public SesionGerente() {
         initComponents();
+        
+        this.setSize(400, 443);
+        this.setBackground(Color.white);
     }
     
     public JButton getbtnCerrarVentanaGerente(){       

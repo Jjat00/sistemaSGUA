@@ -20,7 +20,7 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
     public GestionUsuariosAdmin() {
         initComponents();
         
-            this.setSize(400, 443);
+            this.setSize(500, 469);
             this.setBackground(Color.white);
     }
     
@@ -115,7 +115,7 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnConsultarUsuario)
                             .addComponent(btnModificarUsuario))))
-                .addGap(56, 85, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

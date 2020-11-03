@@ -2,6 +2,7 @@ package sistemasgua;
 
 import controllers.MainController;
 import java.sql.SQLException;
+import views.GUI;
 
 /**
  *
@@ -17,6 +18,7 @@ public class SistemaSGUA {
      * @param args the command line arguments
      */
     public static void main(String args[]) throws SQLException {
-        MainController controller = new MainController();
+        GUI ventana = new GUI();
+        MainController controller = new MainController(ventana);
     }
 }

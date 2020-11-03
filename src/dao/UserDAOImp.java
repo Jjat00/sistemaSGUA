@@ -43,6 +43,24 @@ public class UserDAOImp implements UserDAO{
     }
 
     @Override
+    public Usuario selectUser(String email, char[] password) throws SQLException {
+        Usuario user = null;
+        ResultSet rs = null;
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "SELECT * FROM usuario WHERE email = ? AND password = ?"; 
+        PreparedStatement pstm = con.prepareStatement(sql);
+        pstm.setString(1, email);
+        pstm.setString(2, String.copyValueOf(password));
+        rs = pstm.executeQuery();
+        
+        if (rs.next()) {
+            user = getUser(rs);
+        }
+        
+        return user;
+    }
+
+    @Override
     public ArrayList<Usuario> selectAllUsers() throws SQLException {
         ArrayList<Usuario> listaUsuario = new ArrayList<>();
         

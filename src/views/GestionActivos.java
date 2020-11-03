@@ -20,7 +20,7 @@ public class GestionActivos extends javax.swing.JPanel {
     public GestionActivos() {
         initComponents();
         
-            this.setSize(400, 443);
+            this.setSize(472, 469);
             this.setBackground(Color.white);
     }
     

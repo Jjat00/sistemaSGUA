@@ -12,6 +12,9 @@ public interface UserDAO {
     // Read user by cedula
     public Usuario selectUser(long cedula) throws SQLException;
     
+    // Read user by email and password
+    public Usuario selectUser(String email, char[] password) throws SQLException;
+    
     // Read users
     public ArrayList<Usuario> selectAllUsers() throws SQLException;
     
