@@ -30,11 +30,12 @@ public class GesUsersController implements ActionListener {
     }
     
     private void cambiarPanel() {
-        this.ventana.setSize(ges.getWidth() + 18, ges.getHeight() + 46);
+        this.ventana.setSize(ges.getWidth(), ges.getHeight());
         this.ventana.setLocationRelativeTo(null);
         this.ventana.getMainPanel().removeAll();
         this.ventana.getMainPanel().add(ges);
         this.ventana.getMainPanel().revalidate();
         this.ventana.repaint();
+        //this.ventana.setResizable(false);        
     }
 }

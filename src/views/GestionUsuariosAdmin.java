@@ -20,7 +20,7 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
     public GestionUsuariosAdmin() {
         initComponents();
         
-            this.setSize(500, 469);
+            this.setSize(543, 460);
             this.setBackground(Color.white);
     }
     
@@ -116,19 +116,18 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
                             .addComponent(btnConsultarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jlGestionUsuarios))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnCerrarGestion)
-                        .addGap(13, 13, 13)))
+                        .addComponent(jlGestionUsuarios)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnCerrarGestion))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(btnCerrarGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jlGestionUsuarios)
                 .addGap(59, 59, 59)
                 .addComponent(btnRegistroUsuario)

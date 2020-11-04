@@ -22,6 +22,9 @@ public class GesActivosController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         this.cambiarPanel();
+        this.ges.getbtnRegistroActivos().addActionListener(new RegActivosController(this.ventana));
+        this.ges.getbtnModificarActivos().addActionListener(new ModActivosController(this.ventana));
+        this.ges.getbtnConsultarActivos();
     }
     
     private void cambiarPanel() {

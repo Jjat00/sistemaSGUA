@@ -42,6 +42,7 @@ public class LoginController implements ActionListener {
         this.ventana.getMainPanel().add(login);
         this.ventana.getMainPanel().revalidate();
         this.ventana.repaint();
+        this.ventana.setResizable(false);
     }
     
     private class TryLogin implements ActionListener {

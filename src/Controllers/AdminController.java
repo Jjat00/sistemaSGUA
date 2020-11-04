@@ -29,5 +29,6 @@ public class AdminController {
         this.ventana.getMainPanel().add(admin);
         this.ventana.getMainPanel().revalidate();
         this.ventana.repaint();
+        this.ventana.setResizable(true);        
     }
 }

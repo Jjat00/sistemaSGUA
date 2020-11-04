@@ -39,6 +39,7 @@ public class RegUsersController implements ActionListener {
         this.ventana.getMainPanel().add(reg);
         this.ventana.getMainPanel().revalidate();
         this.ventana.repaint();
+        this.ventana.setResizable(true);
     }
     
     private class registrarUsuario implements ActionListener {
