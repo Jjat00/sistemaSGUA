@@ -12,12 +12,29 @@ public class MainController {
     
     private GUI ventana;
     private Principal principal;
+    private RegistroUsuarios registroUsuarios;
+    private ModificarUsuarios modificarUsuarios;
+    private SesionAdmin sesionAdmin;
+    private SesionGerente sesionGerente;
+    private RegistroExitoso registroExitoso;
+    private ModificacionExitosa modificacionExitosa;
+    private ConsultaUsuario consultaUsuario;
+    private RegistroActivos registroActivos;
+    private ModificarActivos modificarActivos;
+    private ConsultaActivos consultaActivos;
 
     public MainController(GUI ventana){
         this.principal = new Principal();
-        this.ventana = ventana;
-        this.cambiarPanel();
-        this.ventana.setVisible(true);
+        this.registroUsuarios = new RegistroUsuarios();
+        this.modificarUsuarios = new ModificarUsuarios();
+        this.sesionAdmin = new SesionAdmin();
+        this.sesionGerente = new SesionGerente();
+        this.registroExitoso = new RegistroExitoso();
+        this.modificacionExitosa = new ModificacionExitosa();
+        this.consultaUsuario = new ConsultaUsuario();
+        this.registroActivos = new RegistroActivos();
+        this.modificarActivos = new ModificarActivos();
+        this.consultaActivos = new ConsultaActivos();
         
         this.principal.getbtnIngresarInicio()
                 .addActionListener(new Controllers.LoginController(ventana));
