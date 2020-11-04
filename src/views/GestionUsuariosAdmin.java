@@ -82,6 +82,7 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
         jlGestionUsuarios.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 48)); // NOI18N
         jlGestionUsuarios.setForeground(new java.awt.Color(102, 102, 102));
         jlGestionUsuarios.setText("Gestionar usuarios");
+        jlGestionUsuarios.setAlignmentY(0.0F);
 
         btnRegistroUsuario.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         btnRegistroUsuario.setForeground(new java.awt.Color(102, 102, 102));
@@ -109,35 +110,31 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(80, 80, 80)
-                        .addComponent(btnRegistroUsuario))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnRegistroUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnModificarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnConsultarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnConsultarUsuario)
-                            .addComponent(btnModificarUsuario))))
+                        .addContainerGap()
+                        .addComponent(jlGestionUsuarios))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(btnCerrarGestion)
+                        .addGap(13, 13, 13)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnCerrarGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlGestionUsuarios)
-                        .addGap(49, 49, 49))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnCerrarGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jlGestionUsuarios)
-                .addGap(53, 53, 53)
+                .addGap(59, 59, 59)
                 .addComponent(btnRegistroUsuario)
-                .addGap(35, 35, 35)
+                .addGap(36, 36, 36)
                 .addComponent(btnModificarUsuario)
-                .addGap(41, 41, 41)
+                .addGap(40, 40, 40)
                 .addComponent(btnConsultarUsuario)
                 .addContainerGap(65, Short.MAX_VALUE))
         );

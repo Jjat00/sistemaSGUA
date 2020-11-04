@@ -8,6 +8,8 @@ package views;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 /**
@@ -66,11 +68,11 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         this.jtEmail = jtEmail;
     }
     
-    public JTextField getjtContrasenia (){
+    public JPasswordField getjtContrasenia (){
         return jtContrasenia;
     }
     
-    public void setjtContrasenia (JTextField jtContrasenia){
+    public void setjtContrasenia (JPasswordField jtContrasenia){
         this.jtContrasenia = jtContrasenia;
     }
     
@@ -83,8 +85,12 @@ public class ModificarUsuarios extends javax.swing.JPanel {
     }
     
     public JComboBox getcbActividad (){
-        return cbRol;
+        return cbActividad;
     }
+
+    public JLabel getcbMensaje (){
+        return jLabelMensaje;
+    }    
     
     public void setcbActividad (JComboBox cbActividad){
         this.cbActividad = cbActividad;
@@ -120,7 +126,6 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         jlEmail = new javax.swing.JLabel();
         jlContrasenia = new javax.swing.JLabel();
         jtCedula = new javax.swing.JTextField();
-        jtContrasenia = new javax.swing.JTextField();
         jtEmail = new javax.swing.JTextField();
         jtApellido = new javax.swing.JTextField();
         jtNombre = new javax.swing.JTextField();
@@ -136,6 +141,8 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         cbRol = new javax.swing.JComboBox<>();
         jlActividad = new javax.swing.JLabel();
         cbActividad = new javax.swing.JComboBox<>();
+        jtContrasenia = new javax.swing.JPasswordField();
+        jLabelMensaje = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
@@ -196,12 +203,12 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 40)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Modificar usuario");
+        jLabel1.setText("Actualizar usuario");
 
         jlCedula.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         jlCedula.setForeground(new java.awt.Color(102, 102, 102));
@@ -231,11 +238,15 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         cbActividad.setForeground(new java.awt.Color(102, 102, 102));
         cbActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la actividad...", "Activo", "Inactivo" }));
 
+        jLabelMensaje.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 22));
+        jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1444, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(136, 136, 136)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,10 +266,10 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                         .addComponent(jlActividad)
                         .addGap(57, 57, 57)
                         .addComponent(cbActividad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jlContrasenia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jtContrasenia))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jlEmail)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -276,15 +287,18 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                         .addGap(532, 532, 532))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(557, 557, 557))))
+                        .addGap(487, 487, 487))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(363, 363, 363))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTituloAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(36, 36, 36)
                 .addComponent(jLabel1)
-                .addGap(58, 58, 58)
+                .addGap(54, 54, 54)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlCedula)
                     .addComponent(jlActividad)
@@ -306,11 +320,13 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlRol)
                     .addComponent(jlContrasenia)
-                    .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                    .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(9, 9, 9)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -325,6 +341,7 @@ public class ModificarUsuarios extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbActividad;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JLabel jlActividad;
     private javax.swing.JLabel jlAdministrador;
     private javax.swing.JLabel jlApellido;
@@ -338,7 +355,7 @@ public class ModificarUsuarios extends javax.swing.JPanel {
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtCedula;
     private javax.swing.JTextField jtCelular;
-    private javax.swing.JTextField jtContrasenia;
+    private javax.swing.JPasswordField jtContrasenia;
     private javax.swing.JTextField jtEmail;
     private javax.swing.JTextField jtNombre;
     // End of variables declaration//GEN-END:variables

@@ -29,21 +29,21 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace pref="440" max="32767" attributes="0"/>
+              <EmptySpace pref="535" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jlLogo" min="-2" pref="472" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="440" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="btnCerrarPrincipal" alignment="1" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnIngresarInicio" min="-2" pref="155" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="590" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="587" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jlBienvenido" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="453" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="358" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="btnCerrarPrincipal" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>

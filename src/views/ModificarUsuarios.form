@@ -28,7 +28,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jpTituloAdmin" alignment="0" max="32767" attributes="0"/>
+          <Component id="jpTituloAdmin" alignment="0" pref="1444" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -51,10 +51,10 @@
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="cbActividad" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jlContrasenia" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jtContrasenia" min="-2" pref="340" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jtContrasenia" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jlEmail" min="-2" max="-2" attributes="0"/>
@@ -78,7 +78,11 @@
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="557" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="487" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabelMensaje" min="-2" pref="620" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="363" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -88,9 +92,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jpTituloAdmin" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jlCedula" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jlActividad" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -115,12 +119,14 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jlRol" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jlContrasenia" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jtContrasenia" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cbRol" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jtContrasenia" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="55" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="jLabelMensaje" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               <Component id="btnModificar" min="-2" pref="41" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -185,8 +191,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jtCedula">
     </Component>
-    <Component class="javax.swing.JTextField" name="jtContrasenia">
-    </Component>
     <Component class="javax.swing.JTextField" name="jtEmail">
     </Component>
     <Component class="javax.swing.JTextField" name="jtApellido">
@@ -233,7 +237,7 @@
                           <Component id="btnDevolver" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="26" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -269,7 +273,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Modificar usuario"/>
+        <Property name="text" type="java.lang.String" value="Actualizar usuario"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jlCedula">
@@ -368,6 +372,19 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="jtContrasenia">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMensaje">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Ubuntu" size="18" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="16" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+      </Properties>
     </Component>
   </SubComponents>
 </Form>

@@ -64,11 +64,11 @@ public class RegistroUsuarios extends javax.swing.JPanel {
         this.jtEmail = jtEmail;
     }
     
-    public JTextField getjtContrasenia (){
+    public JPasswordField getjtContrasenia (){
         return jtContrasenia;
     }
     
-    public void setjtContrasenia (JTextField jtContrasenia){
+    public void setjtContrasenia (JPasswordField jtContrasenia){
         this.jtContrasenia = jtContrasenia;
     }
     
@@ -76,12 +76,16 @@ public class RegistroUsuarios extends javax.swing.JPanel {
         return cbRol;
     }
     
+    public JLabel getlabelMensaje (){
+        return jLabelMensaje;
+    }
+    
     public void setcbRol (JComboBox cbRol){
         this.cbRol = cbRol;
     }
     
     public JComboBox getcbActividad (){
-        return cbRol;
+        return cbActividad;
     }
     
     public void setcbActividad (JComboBox cbActividad){
@@ -97,11 +101,11 @@ public class RegistroUsuarios extends javax.swing.JPanel {
     }
     
     public JButton getbtnRegistrar (){
-        return btnRegistrar;
+        return btnRegistrarUsuario;
     }
     
     public void setbtnRegistrar (JButton btnRegistrar){
-        this.btnRegistrar = btnRegistrar;
+        this.btnRegistrarUsuario = btnRegistrar;
     }
 
     /**
@@ -127,14 +131,15 @@ public class RegistroUsuarios extends javax.swing.JPanel {
         jlEmail = new javax.swing.JLabel();
         jlContrasenia = new javax.swing.JLabel();
         jtCedula = new javax.swing.JTextField();
-        jtContrasenia = new javax.swing.JTextField();
         jtEmail = new javax.swing.JTextField();
         jtApellido = new javax.swing.JTextField();
         jtNombre = new javax.swing.JTextField();
         jtCelular = new javax.swing.JTextField();
         cbRol = new javax.swing.JComboBox<>();
         cbActividad = new javax.swing.JComboBox<>();
-        btnRegistrar = new javax.swing.JButton();
+        btnRegistrarUsuario = new javax.swing.JButton();
+        jtContrasenia = new javax.swing.JPasswordField();
+        jLabelMensaje = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -173,7 +178,7 @@ public class RegistroUsuarios extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 40)); // NOI18N
@@ -226,67 +231,74 @@ public class RegistroUsuarios extends javax.swing.JPanel {
         cbActividad.setForeground(new java.awt.Color(102, 102, 102));
         cbActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la actividad...", "Activo", "Inactivo" }));
 
-        btnRegistrar.setBackground(new java.awt.Color(204, 204, 204));
-        btnRegistrar.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        btnRegistrar.setForeground(new java.awt.Color(102, 102, 102));
-        btnRegistrar.setText("Registrar usuario");
-        btnRegistrar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        btnRegistrarUsuario.setBackground(new java.awt.Color(204, 204, 204));
+        btnRegistrarUsuario.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        btnRegistrarUsuario.setForeground(new java.awt.Color(102, 102, 102));
+        btnRegistrarUsuario.setText("Registrar usuario");
+        btnRegistrarUsuario.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
+
+        jLabelMensaje.setFont(new java.awt.Font("Ubuntu", 0, 18)); // NOI18N
+        jLabelMensaje.setForeground(new java.awt.Color(255, 4, 4));
+        jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1353, Short.MAX_VALUE)
+            .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1445, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(136, 136, 136)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jlCedula)
+                    .addComponent(jlNombre)
+                    .addComponent(jlApellido)
+                    .addComponent(jlRol))
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
+                    .addComponent(jtCedula)
+                    .addComponent(cbRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jlCedula)
-                            .addComponent(jlNombre)
-                            .addComponent(jlApellido)
-                            .addComponent(jlRol))
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                            .addComponent(jtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                            .addComponent(jtCedula)
-                            .addComponent(cbRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlActividad)
-                                .addGap(57, 57, 57)
-                                .addComponent(cbActividad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jlContrasenia)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jlEmail)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jlCelular)
-                                .addGap(76, 76, 76)
-                                .addComponent(jtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(jlActividad)
+                        .addGap(57, 57, 57)
+                        .addComponent(cbActividad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel1)
-                        .addGap(382, 382, 382)))
+                        .addComponent(jlContrasenia)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtContrasenia))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jlEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlCelular)
+                        .addGap(76, 76, 76)
+                        .addComponent(jtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(137, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(533, 533, 533)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(532, 532, 532))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnRegistrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(532, 532, 532))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 655, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(345, 345, 345))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(425, 425, 425)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTituloAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel1)
-                .addGap(61, 61, 61)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlCedula)
                     .addComponent(jlActividad)
@@ -308,10 +320,12 @@ public class RegistroUsuarios extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlRol)
                     .addComponent(jlContrasenia)
-                    .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
-                .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnRegistrarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -323,11 +337,12 @@ public class RegistroUsuarios extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDevolver;
-    private javax.swing.JButton btnRegistrar;
+    private javax.swing.JButton btnRegistrarUsuario;
     private javax.swing.JComboBox<String> cbActividad;
     private javax.swing.JComboBox<String> cbRol;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JLabel jlActividad;
     private javax.swing.JLabel jlAdministrador;
     private javax.swing.JLabel jlApellido;
@@ -341,7 +356,7 @@ public class RegistroUsuarios extends javax.swing.JPanel {
     private javax.swing.JTextField jtApellido;
     private javax.swing.JTextField jtCedula;
     private javax.swing.JTextField jtCelular;
-    private javax.swing.JTextField jtContrasenia;
+    private javax.swing.JPasswordField jtContrasenia;
     private javax.swing.JTextField jtEmail;
     private javax.swing.JTextField jtNombre;
     // End of variables declaration//GEN-END:variables

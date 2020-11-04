@@ -39,7 +39,7 @@ public class UserDAOImpTest {
     @Test
     public void testSelectUser() throws Exception {
         System.out.println("selectUser");
-        long cedula = 1144222222L;
+        long cedula = 11442222L;
         UserDAOImp instance = new UserDAOImp();
         Usuario expResult = new Usuario(1144222222L, (short) 3, "Nombre3", "Apellido3", true, 3152222222L,
                 "Alguien03@gmail.com", "password3");

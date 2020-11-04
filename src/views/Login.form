@@ -151,6 +151,9 @@
           </Layout>
           <SubComponents>
             <Component class="javax.swing.JTextField" name="jtIngresoUser">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Alguien01@gmail.com"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlUsuario">
               <Properties>
@@ -200,12 +203,16 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JPasswordField" name="jtIngresoContrasenia">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="password1"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlInfoIncorrecta">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Usuario o contrase&#xf1;a incorrecta"/>
               </Properties>
             </Component>

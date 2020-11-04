@@ -54,6 +54,7 @@ public class LoginController implements ActionListener {
                 if (!(correo.equals("") || psw.length == 0)) {
                     Usuario usuario = user.selectUser(correo, psw);
                     if (usuario != null) {
+                        login.getJlInfoIncorrecta().setText("");
                         switch (usuario.getRol()) {
                             case 1:
                                 new AdminController(ventana);
@@ -66,9 +67,13 @@ public class LoginController implements ActionListener {
                                 break;
                         }
                     } else {
+                        login.getJlInfoIncorrecta().setText("usuario o contraseña incorrecta");
                         login.getJlInfoIncorrecta().setForeground(Color.red);
-                        System.out.println("xd");
+                        System.out.println("usuario o contraseña incorrecta");
                     }
+                }else{
+                    login.getJlInfoIncorrecta().setText("Completar campos!");
+                    login.getJlInfoIncorrecta().setForeground(Color.red);
                 }
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());
