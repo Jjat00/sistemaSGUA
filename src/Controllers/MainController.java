@@ -27,6 +27,10 @@ public class MainController {
     private SesionGerente sesionGerente;
     private RegistroExitoso registroExitoso;
     private ModificacionExitosa modificacionExitosa;
+    private ConsultaUsuario consultaUsuario;
+    private RegistroActivos registroActivos;
+    private ModificarActivos modificarActivos;
+    private ConsultaActivos consultaActivos;
 
     public MainController(){
         this.user = new UserDAOImpl();
@@ -44,6 +48,10 @@ public class MainController {
         this.sesionGerente = new SesionGerente();
         this.registroExitoso = new RegistroExitoso();
         this.modificacionExitosa = new ModificacionExitosa();
+        this.consultaUsuario = new ConsultaUsuario();
+        this.registroActivos = new RegistroActivos();
+        this.modificarActivos = new ModificarActivos();
+        this.consultaActivos = new ConsultaActivos();
         
                
         gui.getTempButton().addActionListener((ActionEvent e) -> {
