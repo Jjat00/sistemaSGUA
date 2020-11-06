@@ -1,41 +1,50 @@
 package Controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import views.GUI;
 import views.GestionUsuariosAdmin;
+import views.VentanaEmergente;
 
 /**
  *
  * Controla la ventana para gestionar usuarios
  */
-public class GesUsersController implements ActionListener {
+public class GesUsersController {
     
-    private GUI ventana;
+    private AdminController admin;
+    private VentanaEmergente ventanaGes;
     private GestionUsuariosAdmin ges;
 
-    public GesUsersController(GUI ventana) {
-        this.ventana = ventana;
+    public GesUsersController(AdminController admin) {
+        this.admin = admin;
+        this.ventanaGes = new VentanaEmergente(admin.getPrincipal().getVentana(), true);
         this.ges = new GestionUsuariosAdmin();
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
         this.cambiarPanel();
-        this.ges.getbtnRegistroUsuario().addActionListener(new RegUsersController(ventana));
-        this.ges.getbtnModificarUsuario().addActionListener(new ModUsersController(ventana));
-        this.ges.getbtnCerrarGestion().addActionListener((ActionEvent ev) -> {
-            new AdminController(ventana);
-        });
+        this.next();
+        this.ventanaGes.setVisible(true);
     }
     
     private void cambiarPanel() {
-        this.ventana.setSize(ges.getWidth(), ges.getHeight());
-        this.ventana.setLocationRelativeTo(null);
-        this.ventana.getMainPanel().removeAll();
-        this.ventana.getMainPanel().add(ges);
-        this.ventana.getMainPanel().revalidate();
-        this.ventana.repaint();
-        //this.ventana.setResizable(false);        
+        this.ventanaGes.setSize(ges.getWidth() + 18, ges.getHeight() + 46);
+        this.ventanaGes.setLocationRelativeTo(null);
+        this.ventanaGes.getMainPanel().removeAll();
+        this.ventanaGes.getMainPanel().add(ges);
+        this.ventanaGes.getMainPanel().revalidate();
+        this.ventanaGes.repaint();
+        this.ventanaGes.setResizable(false);        
+    }
+    
+    private void next() {
+        this.ges.getbtnRegistroUsuario().addActionListener((ActionEvent ev) -> {
+            new RegUsersController(admin);
+            this.ventanaGes.dispose();
+        });
+        this.ges.getbtnModificarUsuario().addActionListener((ActionEvent ev) -> {
+            new ModUsersController(admin);
+            this.ventanaGes.dispose();
+        });
+        this.ges.getbtnConsultarUsuario().addActionListener((ActionEvent ev) -> {
+            new ConUsersController(admin);
+            this.ventanaGes.dispose();
+        });
     }
 }

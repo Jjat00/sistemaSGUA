@@ -1,39 +1,51 @@
 package Controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import views.GUI;
 import views.GestionActivos;
+import views.VentanaEmergente;
 
 /**
  *
  * Controla la ventana para gestionar activos
  */
-public class GesActivosController implements ActionListener {
+public class GesActivosController {
 
-    private GUI ventana;
+    private AdminController admin;
+    private VentanaEmergente ventanaGes;
     private GestionActivos ges;
 
-    public GesActivosController(GUI ventana) {
-        this.ventana = ventana;
+    public GesActivosController(AdminController admin) {
+        this.admin = admin;
+        this.ventanaGes = new VentanaEmergente(admin.getPrincipal().getVentana(), true);
         this.ges = new GestionActivos();
-    }
-    
-    @Override
-    public void actionPerformed(ActionEvent e) {
         this.cambiarPanel();
-        this.ges.getbtnRegistroActivos().addActionListener(new RegActivosController(this.ventana));
-        this.ges.getbtnModificarActivos().addActionListener(new ModActivosController(this.ventana));
-        this.ges.getbtnConsultarActivos();
+        this.next();
+        this.ventanaGes.setVisible(true);
     }
     
     private void cambiarPanel() {
-        this.ventana.setSize(ges.getWidth() + 18, ges.getHeight() + 46);
-        this.ventana.setLocationRelativeTo(null);
-        this.ventana.getMainPanel().removeAll();
-        this.ventana.getMainPanel().add(ges);
-        this.ventana.getMainPanel().revalidate();
-        this.ventana.repaint();
+        this.ventanaGes.setSize(ges.getWidth() + 18, ges.getHeight() + 46);
+        this.ventanaGes.setLocationRelativeTo(null);
+        this.ventanaGes.getMainPanel().removeAll();
+        this.ventanaGes.getMainPanel().add(ges);
+        this.ventanaGes.getMainPanel().revalidate();
+        this.ventanaGes.repaint();
+        this.ventanaGes.setResizable(false);
     }
     
+    private void next() {
+        this.ges.getbtnRegistroActivos().addActionListener((ActionEvent ev) -> {
+            new RegActivosController(admin);
+            this.ventanaGes.dispose();
+        });
+        this.ges.getbtnModificarActivos().addActionListener((ActionEvent ev) -> {
+            new ModActivosController(admin);
+            this.ventanaGes.dispose();
+        });
+        this.ges.getbtnConsultarActivos().addActionListener((ActionEvent ev) -> {
+            new ConActivosController(admin);
+            this.ventanaGes.dispose();
+        });
+    }
 }

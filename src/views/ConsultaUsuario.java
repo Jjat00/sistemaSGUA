@@ -8,12 +8,15 @@ package views;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Sharon Zuleta
  */
 public class ConsultaUsuario extends javax.swing.JPanel {
+    
+    private DefaultTableModel modelTbl;
 
     /**
      * Creates new form ConsultaUsuario
@@ -47,6 +50,10 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     
     public void setbtnDevolver (JButton btnDevolver){
         this.btnDevolver = btnDevolver;
+    }
+
+    public DefaultTableModel getModelTbl() {
+        return modelTbl;
     }
 
     /**
@@ -103,28 +110,13 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Cédula", "Nombre", "Apellido", "Rol", "Actividad", "Celular", "Email", "Contaseña"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        String data[][] = {};
+        String head[]={"Cédula", "Rol", "Nombre", "Apellido", "Actividad", "Celular", "Email", "Contaseña"};
+        modelTbl = new DefaultTableModel(data, head);
+        tblUsuarios.setModel(modelTbl);
         jScrollPane1.setViewportView(tblUsuarios);
 
         jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 36)); // NOI18N
@@ -167,7 +159,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                 .addComponent(jpTituloAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)

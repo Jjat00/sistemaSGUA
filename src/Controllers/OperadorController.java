@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.awt.event.ActionEvent;
+import controllers.MainController;
 import views.GUI;
 import views.InicioOperador;
 
@@ -9,21 +11,30 @@ import views.InicioOperador;
  */
 public class OperadorController {
     
-    private GUI ventana;
+    private MainController principal;
     private InicioOperador operador;
 
-    public OperadorController(GUI ventana) {
-        this.ventana = ventana;
+    public OperadorController(MainController principal) {
+        this.principal = principal;
         this.operador = new InicioOperador();
         this.cambiarPanel();
+        this.next();
     }
     
     private void cambiarPanel() {
-        this.ventana.setSize(operador.getWidth() + 18, operador.getHeight() + 46);
-        this.ventana.setLocationRelativeTo(null);
-        this.ventana.getMainPanel().removeAll();
-        this.ventana.getMainPanel().add(operador);
-        this.ventana.getMainPanel().revalidate();
-        this.ventana.repaint();
+        GUI ventana = principal.getVentana();
+        ventana.setSize(operador.getWidth() + 18, operador.getHeight() + 46);
+        ventana.setLocationRelativeTo(null);
+        ventana.getMainPanel().removeAll();
+        ventana.getMainPanel().add(operador);
+        ventana.getMainPanel().revalidate();
+        ventana.repaint();
     }
+    
+    private void next() {}
+
+    public MainController getPrincipal() {
+        return principal;
+    }
+    
 }

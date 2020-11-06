@@ -109,9 +109,9 @@ public class Login extends javax.swing.JPanel {
 
         jtIngresoContrasenia.setText("password1");
 
-        jlInfoIncorrecta.setForeground(new java.awt.Color(255, 255, 255));
+        jlInfoIncorrecta.setForeground(new java.awt.Color(255, 0, 0));
         jlInfoIncorrecta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlInfoIncorrecta.setText("Usuario o contraseña incorrecta");
+        jlInfoIncorrecta.setText(" ");
 
         javax.swing.GroupLayout jpBackgroundLogin1Layout = new javax.swing.GroupLayout(jpBackgroundLogin1);
         jpBackgroundLogin1.setLayout(jpBackgroundLogin1Layout);

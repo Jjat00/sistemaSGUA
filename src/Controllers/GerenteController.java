@@ -1,5 +1,7 @@
 package Controllers;
 
+import java.awt.event.ActionEvent;
+import controllers.MainController;
 import views.GUI;
 import views.InicioGerente;
 
@@ -9,23 +11,33 @@ import views.InicioGerente;
  */
 public class GerenteController {
     
-    private GUI ventana;
+    private MainController principal;
     private InicioGerente gerente;
 
-    public GerenteController(GUI ventana) {
-        this.ventana = ventana;
+    public GerenteController(MainController principal) {
+        this.principal = principal;
         this.gerente = new InicioGerente();
         this.cambiarPanel();
-        
-        this.gerente.getbtnSalirGerente().addActionListener(new SesionGerenteController(ventana));
+        this.next();
     }
     
     private void cambiarPanel() {
-        this.ventana.setSize(gerente.getWidth() + 18, gerente.getHeight() + 46);
-        this.ventana.setLocationRelativeTo(null);
-        this.ventana.getMainPanel().removeAll();
-        this.ventana.getMainPanel().add(gerente);
-        this.ventana.getMainPanel().revalidate();
-        this.ventana.repaint();
+        GUI ventana = principal.getVentana();
+        ventana.setSize(gerente.getWidth() + 18, gerente.getHeight() + 46);
+        ventana.setLocationRelativeTo(null);
+        ventana.getMainPanel().removeAll();
+        ventana.getMainPanel().add(gerente);
+        ventana.getMainPanel().revalidate();
+        ventana.repaint();
+    }
+    
+    private void next() {
+        this.gerente.getbtnSalirGerente().addActionListener((ActionEvent ev) -> {
+            new SesionGerenteController(principal);
+        });
+    }
+
+    public MainController getPrincipal() {
+        return principal;
     }
 }

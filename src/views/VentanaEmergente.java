@@ -3,25 +3,23 @@ package views;
 import javax.swing.JPanel;
 
 /**
- * Purpose : Build the main interface of the application
+ *
+ * Purpose : Build a dialog box
  */
-public class GUI extends javax.swing.JFrame {
+public class VentanaEmergente extends javax.swing.JDialog {
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel mainPanel;
-    // End of variables declaration//GEN-END:variables
-    
     /**
-     * Creates new form GUISistemaSGUA
+     * Creates new form VentanaEmergente
      */
-    public GUI() {
+    public VentanaEmergente(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
         initComponents();
     }
 
     public JPanel getMainPanel() {
         return mainPanel;
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,7 +31,7 @@ public class GUI extends javax.swing.JFrame {
 
         mainPanel = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -59,4 +57,9 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel mainPanel;
+    // End of variables declaration//GEN-END:variables
 }
