@@ -38,6 +38,7 @@ public class GUI extends javax.swing.JFrame {
         TempButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("fgdfg");
 
         TempButton.setText("Boton temporal");
 

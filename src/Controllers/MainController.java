@@ -53,7 +53,7 @@ public class MainController {
         this.modificarActivos = new ModificarActivos();
         this.consultaActivos = new ConsultaActivos();
         
-               
+        
         gui.getTempButton().addActionListener((ActionEvent e) -> {
             JOptionPane.showMessageDialog(null, "Si ves esto borra el boton");
         });

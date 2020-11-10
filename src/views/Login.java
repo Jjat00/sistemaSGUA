@@ -19,17 +19,9 @@ public class Login extends javax.swing.JPanel {
      */
     public Login() {
         initComponents();
-        
+
             this.setSize(457, 643);
             this.setBackground(Color.white);
-    }
-    
-    public JButton getbtnExitLogin(){       
-        return btnExitLogin;        
-    }
-    
-    public void setbtnExitLogin(JButton btnExitLogin){
-        this.btnExitLogin = btnExitLogin;        
     }
     
     public JButton getbtnIngresoLogin(){       
@@ -74,10 +66,10 @@ public class Login extends javax.swing.JPanel {
         jlIconUser = new javax.swing.JLabel();
         btnIngresoLogin = new javax.swing.JButton();
         jlIniciarSesion = new javax.swing.JLabel();
-        btnExitLogin = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
+        setMaximumSize(new java.awt.Dimension(437, 621));
 
         jpBackgroundLogin.setBackground(new java.awt.Color(102, 102, 102));
 
@@ -144,9 +136,6 @@ public class Login extends javax.swing.JPanel {
         jlIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         jlIniciarSesion.setText("Iniciar sesión ");
 
-        btnExitLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-xbox-x-48.png"))); // NOI18N
-        btnExitLogin.setContentAreaFilled(false);
-
         javax.swing.GroupLayout jpBackgroundLoginLayout = new javax.swing.GroupLayout(jpBackgroundLogin);
         jpBackgroundLogin.setLayout(jpBackgroundLoginLayout);
         jpBackgroundLoginLayout.setHorizontalGroup(
@@ -154,9 +143,7 @@ public class Login extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackgroundLoginLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlIniciarSesion)
-                .addGap(68, 68, 68)
-                .addComponent(btnExitLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(127, 127, 127))
             .addGroup(jpBackgroundLoginLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jpBackgroundLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -166,13 +153,8 @@ public class Login extends javax.swing.JPanel {
             jpBackgroundLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackgroundLoginLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpBackgroundLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackgroundLoginLayout.createSequentialGroup()
-                        .addComponent(btnExitLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpBackgroundLoginLayout.createSequentialGroup()
-                        .addComponent(jlIniciarSesion)
-                        .addGap(18, 18, 18)))
+                .addComponent(jlIniciarSesion)
+                .addGap(18, 18, 18)
                 .addComponent(jpBackgroundLogin1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))
         );
@@ -181,23 +163,16 @@ public class Login extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpBackgroundLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jpBackgroundLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jpBackgroundLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jpBackgroundLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnExitLogin;
     private javax.swing.JButton btnIngresoLogin;
     private javax.swing.JLabel jlContrasenia;
     private javax.swing.JLabel jlIconUser;

@@ -69,17 +69,17 @@ public class ConsultaActivos extends javax.swing.JPanel {
 
         tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Marca", "Fases", "Actividad", "Snom (KVA)", "v1nom (V)", "v2nom (V)", "Frecuencia"
+                "ID", "Marca", "Fases", "Actividad", "Snom (KVA)", "v1nom (V)", "v2nom (V)", "Frecuencia", "Georeferenciación", "Barrio", "Comuna"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
