@@ -46,11 +46,53 @@ public class ConActivosController {
         this.consulta.getbtnConsultarActivo().addActionListener((ActionEvent ev) -> {
             this.leerUno();
         });
+        this.consulta.getbtnConsultarActivos().addActionListener((ActionEvent ev) -> {
+            this.leerTodos();
+        });
     }
     
-    private void leerUno() {}
+    private void leerUno() {
+        int idTransformador = Integer.parseInt(this.consulta.getjtID().getText());
+        try {
+            Transformador activo = this.activo.selectTransformador(idTransformador);
+            Boolean actividad =  activo.getActividad();
+            Short idFase = activo.getIdFase();
+            String marca = activo.getMarca();
+            float snom  = activo.getSnom();
+            float v1nom = activo.getV1nom();
+            float v2nom = activo.getV2nom();
+            float frecuencia = activo.getFrecuencia();
+            this.limpiarTabla();
+            String datos[] = { idTransformador + "", marca, idFase +"", actividad + "", snom + "",  v1nom + "", v2nom + "", frecuencia + "" };
+            this.consulta.getModelTbl().addRow(datos);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
-    private void leerTodos() {}
+    private void leerTodos() {
+        try {
+            this.limpiarTabla();
+            ArrayList<Transformador> transformadores = this.activo.selectAllTransformadores();
+            for (Transformador transformador : transformadores) {
+                Boolean actividad = transformador.getActividad();
+                Short idFase = transformador.getIdFase();
+                long idTransformador = transformador.getIdTransformador();
+                String marca = transformador.getMarca();
+                float snom = transformador.getSnom();
+                float v1nom = transformador.getV1nom();
+                float v2nom = transformador.getV2nom();
+                float frecuencia = transformador.getFrecuencia();
+                
+                String datos[] = { idTransformador + "", marca, idFase + "", actividad + "", snom + "", v1nom + "",
+                        v2nom + "", frecuencia + "" };
+
+                this.consulta.getModelTbl().addRow(datos);                
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
     private void limpiarTabla() {
         while(consulta.getModelTbl().getRowCount() != 0) {

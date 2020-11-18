@@ -152,7 +152,7 @@
           <SubComponents>
             <Component class="javax.swing.JTextField" name="jtIngresoUser">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Alguien01@gmail.com"/>
+                <Property name="text" type="java.lang.String" value="Alguien04@gmail.com"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlUsuario">
@@ -204,7 +204,7 @@
             </Component>
             <Component class="javax.swing.JPasswordField" name="jtIngresoContrasenia">
               <Properties>
-                <Property name="text" type="java.lang.String" value="password1"/>
+                <Property name="text" type="java.lang.String" value="password4"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlInfoIncorrecta">

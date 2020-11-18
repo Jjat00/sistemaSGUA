@@ -46,9 +46,30 @@ public class ConUsersController {
         this.consulta.getbtnConsultarUsuario().addActionListener((ActionEvent ev) -> {
             this.leerUno();
         });
+        this.consulta.getbtnConsultarUsuarios().addActionListener((ActionEvent ev) ->{
+            this.leerTodos();
+        });
     }
     
-    private void leerUno() {}
+    private void leerUno() {
+        long cedula = Long.parseLong(this.consulta.getjtCedula().getText());
+        try {
+            
+            Usuario usuario = userDAO.selectUser(cedula);
+            int rol = usuario.getRol();
+            String nombre = usuario.getNombre();
+            String apellido = usuario.getApellido();
+            boolean actividad = usuario.isActividad();
+            long celular = usuario.getCelular();
+            String email = usuario.getEmail();
+            String password = usuario.getPassword();            
+            this.limpiarTabla();
+            String datos[] = { cedula + "", rol + "", nombre, apellido, actividad + "", celular + "", email, password };
+            this.consulta.getModelTbl().addRow(datos);            
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     
     private void leerTodos() {
         try {
