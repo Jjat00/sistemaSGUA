@@ -28,5 +28,13 @@ public class FasesTransformador {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+    
+    @Override
+    public String toString() {
+        return "Fases Transformador: {" 
+            + "\n\tid: " + this.idFase 
+            + ",\n\ttipo: " + this.tipo
+            + "\n}";
+    }
         
 }

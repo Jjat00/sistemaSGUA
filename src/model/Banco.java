@@ -10,9 +10,10 @@ package model;
  * Modelo para la tabla Banco
  */
 public class Banco {
+    
     private int idBanco;
     private String nombre;
-
+    
     public Banco(int idBanco, String nombre){
         this.idBanco = idBanco;
         this.nombre = nombre;
@@ -32,5 +33,14 @@ public class Banco {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    @Override
+    public String toString() {
+        return "Metodo de pago: {"
+                + "\n\t id=" + this.idBanco
+                + "\n\t nombre=" + this.nombre
+                + "\n}";
+                
     }
 }

@@ -13,9 +13,22 @@ import model.Rol;
  * implementacion de la interface para el manejo de datos del rol
  */
 public class RolDAOImp implements RolDAO {
+    
+    public boolean insertRol(Rol rol) throws SQLException {
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "INSERT INTO rol VALUES ('" + rol.getId() + "','" + rol.getNombre() + "')";
+        PreparedStatement pstm = con.prepareStatement(sql);
+        int result = pstm.executeUpdate();
+        
+        return (result == 1);
+        
+    }
+    
 
     @Override
     public Rol selectRolByID(short id) throws SQLException {
+        
         Rol rol = null;
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM rol WHERE id = " + id; 
@@ -36,15 +49,36 @@ public class RolDAOImp implements RolDAO {
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM rol ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
-        ResultSet rs = null;
+        ResultSet rs = pstm.executeQuery();
         
-        rs = pstm.executeQuery();
         while(rs.next()){
             Rol rol = getRol(rs);
             listaRol.add(rol);
         }
         
         return listaRol;
+    }
+    
+    public boolean updateRol(Rol rol) throws SQLException {
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "UPDATE rol SET tipo = '" + rol.getNombre() + "' WHERE id = " + rol.getId();
+        PreparedStatement pstm = con.prepareStatement(sql);
+        int result = pstm.executeUpdate();
+        
+        return (result == 1);
+        
+    }
+
+    public boolean deleteRol(short id) throws SQLException {
+        
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "DELETE FROM rol WHERE id = " + id;
+        PreparedStatement pstm = con.prepareStatement(sql);
+        int result = pstm.executeUpdate();
+        
+        return (result == 1);
+        
     }
     
     private Rol getRol(ResultSet rs) throws SQLException {

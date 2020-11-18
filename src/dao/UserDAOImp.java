@@ -18,7 +18,7 @@ public class UserDAOImp implements UserDAO{
     public boolean insertUser(Usuario user) throws SQLException {
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO usuario VALUES (" + user.getCedula() + "," + user.getRol() + ",'"
+        String sql = "INSERT INTO usuario VALUES ('" + user.getCedula() + "'," + user.getRol() + ",'"
                      + user.getNombre() + "', '"+user.getApellido() + "','" + user.isActividad() + "','"
                      + user.getCelular() + "','" + user.getEmail() + "','" + user.getPassword() + "')";
         PreparedStatement pstm = con.prepareStatement(sql);

@@ -16,20 +16,19 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
 
     @Override
     public boolean insertClienteUbicacion(ClienteUbicacion clienteUbicacion) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO cliente_ubicacion VALUES ("+clienteUbicacion.getCedula()+","+clienteUbicacion.getDireccion()+","
-                     +clienteUbicacion.getEstrado()+")";
+        String sql = "INSERT INTO cliente_ubicacion VALUES ( '" + clienteUbicacion.getCedula() + "','" + clienteUbicacion.getDireccion() + "','" + clienteUbicacion.getEstrado() + "' )";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
+        
     }
 
     @Override
     public ClienteUbicacion selectClienteUbicacion(long cedulaCliente) throws SQLException {
+        
         ClienteUbicacion clienteUbicacion = null;
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM cliente_ubicacion WHERE cedula = " + cedulaCliente; 
@@ -45,6 +44,7 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
 
     @Override
     public ArrayList<ClienteUbicacion> selectAllClienteUbicacion() throws SQLException {
+        
         ArrayList<ClienteUbicacion> listaClienteUbicacion = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
@@ -62,29 +62,24 @@ public class ClienteUbicacionDAOImp implements ClienteUbicacionDAO {
 
     @Override
     public boolean updateClienteUbicacion(ClienteUbicacion clienteUbicacion) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE cliente_ubicacion SET direccion = "+clienteUbicacion.getDireccion()+", estrato="+clienteUbicacion.getEstrado()
-                +" WHERE cedula = "+clienteUbicacion.getCedula();
+        String sql = "UPDATE cliente_ubicacion SET direccion = '" + clienteUbicacion.getDireccion() + "' , estrato = '" + clienteUbicacion.getEstrado() + "' WHERE cedula = " + clienteUbicacion.getCedula();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteClienteUbicacion(long cedulaCliente) throws SQLException {
-        boolean delete = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM cliente_ubicacion WHERE cedula = " + cedulaCliente;
-        PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        String sql = "DELETE FROM cliente_ubicacion WHERE cedula = " + cedulaCliente;
+        PreparedStatement pstm = con.prepareStatement(sql);
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private ClienteUbicacion getClienteUbicacion(ResultSet rs) throws SQLException {

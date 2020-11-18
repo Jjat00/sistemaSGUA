@@ -17,20 +17,19 @@ public class PagoDAOImp implements PagoDAO {
 
     @Override
     public boolean insertPago(Pago pay) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO pago VALUES ("+pay.getIdPago()+","+pay.getFecha()+","
-                     +pay.getIdBanco()+","+pay.getIdFactura()+")";
+        String sql = "INSERT INTO pago VALUES ('" + pay.getIdPago() + "','" + pay.getFecha() + "','"
+                     + pay.getIdBanco() + "','" + pay.getIdFactura() + "')";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public Pago selectPago(int idPago) throws SQLException {
+        
         Pago pay = null;
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM pago WHERE id = " + idPago; 
@@ -63,29 +62,25 @@ public class PagoDAOImp implements PagoDAO {
 
     @Override
     public boolean updatePago(Pago pay) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE pago SET fecha="+pay.getFecha()+", id_banco="+pay.getIdBanco()+
-                     ", id_factura="+pay.getIdFactura()+" WHERE id="+pay.getIdPago();
+        String sql = "UPDATE pago SET fecha = '" + pay.getFecha() + "', metodo_pago = '" + pay.getIdBanco() +
+                     "', id_factura = '" + pay.getIdFactura() + "' WHERE id = " + pay.getIdPago();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deletePago(int idPago) throws SQLException {
-        boolean delete = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM pago WHERE id=" + idPago;
+        String sql = "DELETE FROM pago WHERE id = " + idPago;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private Pago getPago(ResultSet rs) throws SQLException {
