@@ -16,19 +16,18 @@ public class FasesTransformadorDAOImp implements FasesTransformadorDAO {
 
     @Override
     public boolean insertFasesTransformador(FasesTransformador fase) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO fases VALUES ("+fase.getIdFase()+","+fase.getTipo()+")";
+        String sql = "INSERT INTO fases VALUES ('" + fase.getIdFase() + "','" + fase.getTipo() + "')";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public FasesTransformador selectFasesTransformador(short idFase) throws SQLException {
+        
         FasesTransformador fase = null;
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM fases WHERE id = " + idFase; 
@@ -61,28 +60,24 @@ public class FasesTransformadorDAOImp implements FasesTransformadorDAO {
 
     @Override
     public boolean updateFasesTransformador(FasesTransformador fase) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE fases SET tipo="+fase.getTipo()+" WHERE id="+fase.getIdFase();
+        String sql = "UPDATE fases SET tipo = '" + fase.getTipo() + "' WHERE id = " + fase.getIdFase();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteFasesTransformador(short idFase) throws SQLException {
-        boolean delete = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM fases WHERE id=" + idFase;
+        String sql = "DELETE FROM fases WHERE id= " + idFase;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        int  result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private FasesTransformador getFasesTransformador(ResultSet rs) throws SQLException {

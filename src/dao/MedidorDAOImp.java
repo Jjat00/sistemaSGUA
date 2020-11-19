@@ -17,25 +17,23 @@ public class MedidorDAOImp implements MedidorDAO {
 
     @Override
     public boolean insertMedidor(Medidor medidor) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO medidor VALUES ("+medidor.getNoMedidor()+","+medidor.getLecturaActual()+
-                     ","+medidor.getLecturaAnterior()+","+medidor.getConsumoActual()+","+medidor.getFechaMedicion()+")";
+        String sql = "INSERT INTO medidor VALUES ('" + medidor.getNoMedidor()+ "','" + medidor.getLecturaActual()+ "','" + medidor.getLecturaAnterior()+ "','" + medidor.getConsumoActual() + "','" + medidor.getFechaMedicion() + "')" ;
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public Medidor selectMedidor(int NoMedidor) throws SQLException {
         Medidor medidor = null;
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM medidor WHERE numero = " + NoMedidor; 
+        String sql = "SELECT * FROM medidor WHERE id = " + NoMedidor; 
         PreparedStatement pstm = con.prepareStatement(sql);
         ResultSet rs = pstm.executeQuery();
+        
         if (rs.next()) {
             medidor = getMedidor(rs);
         }
@@ -48,7 +46,7 @@ public class MedidorDAOImp implements MedidorDAO {
         ArrayList<Medidor> listaMedidor = new ArrayList<>();
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "SELECT * FROM medidor ORDER BY numero";
+        String sql = "SELECT * FROM medidor ORDER BY id";
         PreparedStatement pstm = con.prepareStatement(sql);
         ResultSet rs = pstm.executeQuery();
         
@@ -62,30 +60,24 @@ public class MedidorDAOImp implements MedidorDAO {
 
     @Override
     public boolean updateMedidor(Medidor medidor) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE medidor SET lectura_actual="+medidor.getLecturaActual()+", lectura_anterior="+medidor.getLecturaAnterior()+
-                     ", consumo_actual="+medidor.getConsumoActual()+", fecha_medicion="+medidor.getFechaMedicion()+" WHERE numero="+medidor.getNoMedidor();
+        String sql = "UPDATE medidor SET lectura_actual = '" + medidor.getLecturaActual() + "' , lectura_anterior = '" + medidor.getLecturaAnterior() + "' , consumo_actual = '" + medidor.getConsumoActual() + "', fecha_medicion = '" + medidor.getFechaMedicion() + "' WHERE id = " + medidor.getNoMedidor();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteMedidor(int NoMedidor) throws SQLException {
-        boolean delete = false;
-        Medidor medidor = selectMedidor(NoMedidor);
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM medidor WHERE numero=" + NoMedidor;
+        String sql = "DELETE FROM medidor WHERE id = " + NoMedidor;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
     private Medidor getMedidor(ResultSet rs) throws SQLException {

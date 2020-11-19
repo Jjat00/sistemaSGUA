@@ -16,21 +16,20 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
 
     @Override
     public boolean insertTransformadorUbicacion(TransformadorUbicacion transformadorUbicacion) throws SQLException {
-        boolean registrar = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "INSERT INTO transformador_ubicacion VALUES ("+transformadorUbicacion.getIdTransformador()+
-                     ","+transformadorUbicacion.getGeoreferencia()+","+transformadorUbicacion.getBarrio()+","
-                     +transformadorUbicacion.getComuna()+")";
+        String sql = "INSERT INTO transformador_ubicacion VALUES ('" + transformadorUbicacion.getIdTransformador() +
+                     "','" + transformadorUbicacion.getGeoreferencia() + "','" + transformadorUbicacion.getBarrio() + "','"
+                     + transformadorUbicacion.getComuna() + "')";
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        registrar = true;
+        int result = pstm.executeUpdate();
         
-        return registrar;
+        return (result == 1);
     }
 
     @Override
     public TransformadorUbicacion selectTransformadorUbicacion(int idTransformador) throws SQLException {
+        
         TransformadorUbicacion transformadorUbicacion = null;
         Connection con = ConnectionBridge.getConnection();
         String sql = "SELECT * FROM transformador_ubicacion WHERE id = " + idTransformador; 
@@ -62,29 +61,25 @@ public class TransformadorUbicacionDAOImp implements TransformadorUbicacionDAO{
 
     @Override
     public boolean updateTransformadorUbicacion(TransformadorUbicacion transformadorUbicacion) throws SQLException {
-        boolean update = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "UPDATE transformador_ubicacion SET georeferenciacion="+transformadorUbicacion.getGeoreferencia()+", barrio="+transformadorUbicacion.getBarrio()+
-                     ", comuna="+transformadorUbicacion.getComuna()+" WHERE id="+transformadorUbicacion.getIdTransformador();
+        String sql = "UPDATE transformador_ubicacion SET georeferenciacion = '" + transformadorUbicacion.getGeoreferencia() + "', barrio = '" + transformadorUbicacion.getBarrio() +
+                     "', comuna = '" + transformadorUbicacion.getComuna() + "' WHERE id = " + transformadorUbicacion.getIdTransformador();
         PreparedStatement pstm = con.prepareStatement(sql);
-        pstm.executeQuery();
-        update = true;
+        int result = pstm.executeUpdate();
         
-        return update;
+        return (result == 1);
     }
 
     @Override
     public boolean deleteTransformadorUbicacion(int idTransformador) throws SQLException {
-        boolean delete = false;
         
         Connection con = ConnectionBridge.getConnection();
-        String sql = "DELETE * FROM transformador_ubicacion WHERE id=" + idTransformador;
+        String sql = "DELETE FROM transformador_ubicacion WHERE id = " + idTransformador;
         PreparedStatement pstm = con.prepareStatement(sql);  
-        pstm.executeQuery();
-        delete = true;
+        int result = pstm.executeUpdate();
         
-        return delete;
+        return (result == 1);
     }
     
 

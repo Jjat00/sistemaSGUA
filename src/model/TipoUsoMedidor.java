@@ -32,5 +32,14 @@ public class TipoUsoMedidor {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }    
+    }
+
+    @Override
+    public String toString() {
+        return "TipoUso: {"
+                + "\n\t id=" + this.idTipoUso
+                + "\n\t tipo=" + this.tipo
+                + "\n}";
+    }
+    
 }

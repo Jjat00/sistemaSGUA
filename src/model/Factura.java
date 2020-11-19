@@ -19,13 +19,13 @@ public class Factura {
     private float valorUnitario;
     private float subsidio;
 
-    public Factura(int NoCuenta, long cedulaCliente, int NoMedidor, boolean estadoPago,
-                    int tipoUso, float valorUnitario, float subsidio) {                        
+    public Factura(int NoCuenta, long cedulaCliente, boolean estadoPago,
+                    int tipoUso,int NoMedidor, float valorUnitario, float subsidio) {                        
         this.NoCuenta = NoCuenta;
         this.cedulaCliente = cedulaCliente;
-        this.NoMedidor = NoMedidor;
         this.estadoPago = estadoPago;
         this.tipoUso = tipoUso;
+        this.NoMedidor = NoMedidor;
         this.valorUnitario = valorUnitario;
         this.subsidio = subsidio;
     }
@@ -92,7 +92,8 @@ public class Factura {
             + "\n\tNoCuenta: " + this.NoCuenta 
             + ",\n\tcedulaCliente: " + this.cedulaCliente 
             + ",\n\testadoPago: " + this.estadoPago 
-            + ",\n\ttipoUso: " + this.tipoUso 
+            + ",\n\ttipoUso: " + this.tipoUso
+            + ",\n\tNoMedidor: " + this.NoMedidor
             + ",\n\tvalorUnitario: " + this.valorUnitario 
             + ",\n\tsubsidio: " + this.subsidio 
             + "\n}";
