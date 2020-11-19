@@ -96,13 +96,12 @@ public class RegistroActivos extends javax.swing.JPanel {
         return btnDevolver;
     }
 
-    public JLabel getLabelMensaje (){
-        return jLabelMensaje;
-    }    
-    
-    
     public void setbtnDevolver (JButton btnDevolver){
         this.btnDevolver = btnDevolver;
+    }
+    
+    public JLabel getLabelMensaje() {
+        return jLabelMensaje;
     }
     
     public JButton getbtnRegistrarActivo (){
@@ -111,6 +110,30 @@ public class RegistroActivos extends javax.swing.JPanel {
     
     public void setbtnRegistrarActivo (JButton btnRegistrarActivo){
         this.btnRegistrarActivo = btnRegistrarActivo;
+    }
+    
+    public JTextField getjtGeoreferenciacion (){
+        return jtGeoreferenciacion;
+    }
+    
+    public void setjtGeoreferenciacion (JTextField jtGeoreferenciacion){
+        this.jtGeoreferenciacion = jtGeoreferenciacion;
+    }
+    
+    public JTextField getjtBarrio (){
+        return jtBarrio;
+    }
+    
+    public void setjtBarrio (JTextField jtBarrio){
+        this.jtBarrio = jtBarrio;
+    }
+    
+    public JTextField getjtComuna (){
+        return jtComuna;
+    }
+    
+    public void setjtComuna (JTextField jtComuna){
+        this.jtComuna = jtComuna;
     }
 
     /**
@@ -143,6 +166,12 @@ public class RegistroActivos extends javax.swing.JPanel {
         jtSnom = new javax.swing.JTextField();
         cbFases = new javax.swing.JComboBox<>();
         jtMarca = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jtGeoreferenciacion = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jtBarrio = new javax.swing.JTextField();
+        jtComuna = new javax.swing.JTextField();
         jLabelMensaje = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -173,11 +202,6 @@ public class RegistroActivos extends javax.swing.JPanel {
         btnRegistrarActivo.setForeground(new java.awt.Color(102, 102, 102));
         btnRegistrarActivo.setText("Registrar activo");
         btnRegistrarActivo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
-        btnRegistrarActivo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistrarActivoActionPerformed(evt);
-            }
-        });
 
         jlV2nom.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         jlV2nom.setForeground(new java.awt.Color(102, 102, 102));
@@ -215,7 +239,7 @@ public class RegistroActivos extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jlFrecuencia.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
@@ -238,9 +262,22 @@ public class RegistroActivos extends javax.swing.JPanel {
         cbFases.setForeground(new java.awt.Color(102, 102, 102));
         cbFases.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una fase...", "Monofásico", "Bifásico", "Trifásico", " " }));
 
-        jLabelMensaje.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 3));
+        jLabel2.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Georeferenciación:");
+
+        jLabel3.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Barrio:");
+
+        jLabel4.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Comuna:");
+
+        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 0));
         jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMensaje.setText(" ");
+        jLabelMensaje.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -248,25 +285,27 @@ public class RegistroActivos extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1481, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(136, 136, 136)
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlID)
-                    .addComponent(jlMarca)
-                    .addComponent(jlFases)
-                    .addComponent(jlRol))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlID)
+                            .addComponent(jlMarca)
+                            .addComponent(jlFases)
+                            .addComponent(jlRol))
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtSnom)
+                            .addComponent(jtID)
+                            .addComponent(cbFases, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtGeoreferenciacion, javax.swing.GroupLayout.DEFAULT_SIZE, 345, Short.MAX_VALUE)))
+                .addGap(109, 109, 109)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtSnom)
-                    .addComponent(jtID)
-                    .addComponent(cbFases, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(112, 112, 112)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlFrecuencia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jlV2nom)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -277,19 +316,32 @@ public class RegistroActivos extends javax.swing.JPanel {
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cbActividad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jtV1nom, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))))
-                .addContainerGap(106, Short.MAX_VALUE))
+                            .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlFrecuencia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtComuna, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(138, 138, 138))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnRegistrarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(548, 548, 548))
+                        .addGap(532, 532, 532))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(462, 462, 462))))
+                        .addComponent(jLabel1)
+                        .addGap(618, 618, 618))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(445, 445, 445))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -303,41 +355,39 @@ public class RegistroActivos extends javax.swing.JPanel {
                     .addComponent(jlActividad)
                     .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlMarca)
-                            .addComponent(jlV1nom)
-                            .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlMarca)
+                    .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlV1nom)
+                    .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlFases)
+                    .addComponent(cbFases, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlV2nom)
-                    .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbFases, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                    .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlRol)
+                    .addComponent(jtSnom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlFrecuencia)
-                    .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtSnom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jtGeoreferenciacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtComuna, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addComponent(jLabelMensaje)
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnRegistrarActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActivoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistrarActivoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDevolver;
@@ -345,6 +395,9 @@ public class RegistroActivos extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbActividad;
     private javax.swing.JComboBox<String> cbFases;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JLabel jlActividad;
     private javax.swing.JLabel jlAdministrador;
@@ -356,7 +409,10 @@ public class RegistroActivos extends javax.swing.JPanel {
     private javax.swing.JLabel jlV1nom;
     private javax.swing.JLabel jlV2nom;
     private javax.swing.JPanel jpTituloAdmin;
+    private javax.swing.JTextField jtBarrio;
+    private javax.swing.JTextField jtComuna;
     private javax.swing.JTextField jtFrecuencia;
+    private javax.swing.JTextField jtGeoreferenciacion;
     private javax.swing.JTextField jtID;
     private javax.swing.JTextField jtMarca;
     private javax.swing.JTextField jtSnom;

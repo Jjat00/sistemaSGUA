@@ -23,15 +23,7 @@ public class SesionGerente extends javax.swing.JPanel {
         this.setSize(400, 443);
         this.setBackground(Color.white);
     }
-    
-    public JButton getbtnCerrarVentanaGerente(){       
-        return btnCerrarVentanaGerente;        
-    }
-    
-    public void setbtnCerrarVentanaGerente(JButton btnCerrarVentanaGerente){
-        this.btnCerrarVentanaGerente = btnCerrarVentanaGerente;        
-    }
-    
+        
     public JButton getbtnCerrarSesionGerente(){       
         return btnCerrarSesionGerente;        
     }
@@ -50,7 +42,6 @@ public class SesionGerente extends javax.swing.JPanel {
     private void initComponents() {
 
         jlGerente = new javax.swing.JLabel();
-        btnCerrarVentanaGerente = new javax.swing.JButton();
         btnCerrarSesionGerente = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -59,10 +50,6 @@ public class SesionGerente extends javax.swing.JPanel {
         jlGerente.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 36)); // NOI18N
         jlGerente.setForeground(new java.awt.Color(102, 102, 102));
         jlGerente.setText("Gerente");
-
-        btnCerrarVentanaGerente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-xbox-x-48.png"))); // NOI18N
-        btnCerrarVentanaGerente.setBorderPainted(false);
-        btnCerrarVentanaGerente.setContentAreaFilled(false);
 
         btnCerrarSesionGerente.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         btnCerrarSesionGerente.setForeground(new java.awt.Color(102, 102, 102));
@@ -75,15 +62,9 @@ public class SesionGerente extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCerrarVentanaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jlGerente)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGap(146, 146, 146)
+                .addComponent(jlGerente)
+                .addContainerGap(156, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 109, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesionGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -92,9 +73,7 @@ public class SesionGerente extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCerrarVentanaGerente, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(73, 73, 73)
                 .addComponent(jlGerente)
                 .addGap(120, 120, 120)
                 .addComponent(btnCerrarSesionGerente)
@@ -105,7 +84,6 @@ public class SesionGerente extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrarSesionGerente;
-    private javax.swing.JButton btnCerrarVentanaGerente;
     private javax.swing.JLabel jlGerente;
     // End of variables declaration//GEN-END:variables
 }

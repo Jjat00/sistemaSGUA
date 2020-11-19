@@ -23,21 +23,13 @@ public class GestionActivos extends javax.swing.JPanel {
             this.setSize(570, 469);
             this.setBackground(Color.white);
     }
-    
-    public JButton getbtnCerrarGesActivos(){       
-        return btnCerrarGesActivos;        
+
+    public JButton getBtnRegistroActivos() {
+        return btnRegistroActivos;
     }
-    
-    public void setbtnCerrarGesActivos(JButton btnCerrarGesActivos){
-        this.btnCerrarGesActivos = btnCerrarGesActivos;        
-    }
-    
-    public JButton getbtnRegistroActivos(){       
-        return btnRegistroActivos;        
-    }
-    
-    public void setbtnbtnRegistroActivos(JButton btnRegistroActivos){
-        this.btnRegistroActivos = btnRegistroActivos;        
+
+    public void setBtnRegistroActivos(JButton btnRegistroActivos) {
+        this.btnRegistroActivos = btnRegistroActivos;
     }
     
     public JButton getbtnModificarActivos(){       
@@ -65,7 +57,6 @@ public class GestionActivos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCerrarGesActivos = new javax.swing.JButton();
         jlGestionActivos = new javax.swing.JLabel();
         btnRegistroActivos = new javax.swing.JButton();
         btnModificarActivos = new javax.swing.JButton();
@@ -73,10 +64,6 @@ public class GestionActivos extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
-
-        btnCerrarGesActivos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-xbox-x-48.png"))); // NOI18N
-        btnCerrarGesActivos.setBorderPainted(false);
-        btnCerrarGesActivos.setContentAreaFilled(false);
 
         jlGestionActivos.setBackground(new java.awt.Color(255, 255, 255));
         jlGestionActivos.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 48)); // NOI18N
@@ -113,7 +100,6 @@ public class GestionActivos extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnCerrarGesActivos, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jlGestionActivos)
                         .addGap(49, 49, 49))))
@@ -129,9 +115,7 @@ public class GestionActivos extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnCerrarGesActivos, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(65, 65, 65)
                 .addComponent(jlGestionActivos)
                 .addGap(56, 56, 56)
                 .addComponent(btnRegistroActivos)
@@ -149,7 +133,6 @@ public class GestionActivos extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarGesActivos;
     private javax.swing.JButton btnConsultarActivos;
     private javax.swing.JButton btnModificarActivos;
     private javax.swing.JButton btnRegistroActivos;

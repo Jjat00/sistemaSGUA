@@ -1,7 +1,6 @@
 package Controllers;
 
 import java.awt.event.ActionEvent;
-import views.GUI;
 import views.GestionActivos;
 import views.VentanaEmergente;
 
@@ -35,7 +34,7 @@ public class GesActivosController {
     }
     
     private void next() {
-        this.ges.getbtnRegistroActivos().addActionListener((ActionEvent ev) -> {
+        this.ges.getBtnRegistroActivos().addActionListener((ActionEvent ev) -> {
             new RegActivosController(admin);
             this.ventanaGes.dispose();
         });

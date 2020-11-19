@@ -106,10 +106,35 @@ public class ModificarActivos extends javax.swing.JPanel {
     public void setbtnModificarActivo (JButton btnModificarActivo){
         this.btnModificarActivo = btnModificarActivo;
     }
+    
+     public JTextField getjtGeoreferenciacion (){
+        return jtGeoreferenciacion;
+    }
+    
+    public void setjtGeoreferenciacion (JTextField jtGeoreferenciacion){
+        this.jtGeoreferenciacion = jtGeoreferenciacion;
+    }
+    
+    public JTextField getjtBarrio (){
+        return jtBarrio;
+    }
+    
+    public void setjtBarrio (JTextField jtBarrio){
+        this.jtBarrio = jtBarrio;
+    }
+    
+    public JTextField getjtComuna (){
+        return jtComuna;
+    }
+    
+    public void setjtComuna (JTextField jtComuna){
+        this.jtComuna = jtComuna;
+    }
 
-    public JLabel getLabelMensaje (){
+    public JLabel getLabelMensaje() {
         return jLabelMensaje;
-    }    
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -119,39 +144,37 @@ public class ModificarActivos extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jlV1nom = new javax.swing.JLabel();
-        jlID = new javax.swing.JLabel();
         btnModificarActivo = new javax.swing.JButton();
-        jlV2nom = new javax.swing.JLabel();
-        jlMarca = new javax.swing.JLabel();
         jpTituloAdmin = new javax.swing.JPanel();
         jlAdministrador = new javax.swing.JLabel();
         btnDevolver = new javax.swing.JButton();
-        jtSnom = new javax.swing.JTextField();
-        cbFases = new javax.swing.JComboBox<>();
-        jlFases = new javax.swing.JLabel();
-        jtV1nom = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
         jtMarca = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jtGeoreferenciacion = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jtBarrio = new javax.swing.JTextField();
+        jtComuna = new javax.swing.JTextField();
         jlFrecuencia = new javax.swing.JLabel();
-        jlRol = new javax.swing.JLabel();
         jtID = new javax.swing.JTextField();
         jtFrecuencia = new javax.swing.JTextField();
-        jlActividad = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        cbActividad = new javax.swing.JComboBox<>();
         jtV2nom = new javax.swing.JTextField();
+        jlID = new javax.swing.JLabel();
+        jlMarca = new javax.swing.JLabel();
+        jlFases = new javax.swing.JLabel();
+        jtV1nom = new javax.swing.JTextField();
+        jlRol = new javax.swing.JLabel();
+        jlActividad = new javax.swing.JLabel();
+        cbActividad = new javax.swing.JComboBox<>();
+        jlV1nom = new javax.swing.JLabel();
+        jlV2nom = new javax.swing.JLabel();
+        jtSnom = new javax.swing.JTextField();
+        cbFases = new javax.swing.JComboBox<>();
         jLabelMensaje = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
-
-        jlV1nom.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        jlV1nom.setForeground(new java.awt.Color(102, 102, 102));
-        jlV1nom.setText("v1nom (V):");
-
-        jlID.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        jlID.setForeground(new java.awt.Color(102, 102, 102));
-        jlID.setText("Id:");
 
         btnModificarActivo.setBackground(new java.awt.Color(204, 204, 204));
         btnModificarActivo.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
@@ -163,14 +186,6 @@ public class ModificarActivos extends javax.swing.JPanel {
                 btnModificarActivoActionPerformed(evt);
             }
         });
-
-        jlV2nom.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        jlV2nom.setForeground(new java.awt.Color(102, 102, 102));
-        jlV2nom.setText("v2nom (V):");
-
-        jlMarca.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        jlMarca.setForeground(new java.awt.Color(102, 102, 102));
-        jlMarca.setText("Marca:");
 
         jpTituloAdmin.setBackground(new java.awt.Color(102, 102, 102));
         jpTituloAdmin.setPreferredSize(new java.awt.Dimension(1352, 120));
@@ -204,20 +219,46 @@ public class ModificarActivos extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        cbFases.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
-        cbFases.setForeground(new java.awt.Color(102, 102, 102));
-        cbFases.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una fase...", "Monofásico", "Bifásico", "Trifásico", " " }));
+        jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 40)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel1.setText("Modificar activo");
 
-        jlFases.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
-        jlFases.setForeground(new java.awt.Color(102, 102, 102));
-        jlFases.setText("Fases:");
+        jLabel2.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel2.setText("Georeferenciación:");
+
+        jLabel3.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel3.setText("Barrio:");
+
+        jLabel4.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel4.setText("Comuna:");
+
+        jtComuna.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtComunaActionPerformed(evt);
+            }
+        });
 
         jlFrecuencia.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         jlFrecuencia.setForeground(new java.awt.Color(102, 102, 102));
         jlFrecuencia.setText("Frecuencia:");
+
+        jlID.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jlID.setForeground(new java.awt.Color(102, 102, 102));
+        jlID.setText("Id:");
+
+        jlMarca.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jlMarca.setForeground(new java.awt.Color(102, 102, 102));
+        jlMarca.setText("Marca:");
+
+        jlFases.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jlFases.setForeground(new java.awt.Color(102, 102, 102));
+        jlFases.setText("Fases:");
 
         jlRol.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
         jlRol.setForeground(new java.awt.Color(102, 102, 102));
@@ -227,43 +268,58 @@ public class ModificarActivos extends javax.swing.JPanel {
         jlActividad.setForeground(new java.awt.Color(102, 102, 102));
         jlActividad.setText("Actividad:");
 
-        jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 40)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Modificar activo");
-
         cbActividad.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
         cbActividad.setForeground(new java.awt.Color(102, 102, 102));
         cbActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la actividad...", "Verdadero\t", "Falso" }));
 
-        jLabelMensaje.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
-        jLabelMensaje.setForeground(new java.awt.Color(255, 3, 0));
+        jlV1nom.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jlV1nom.setForeground(new java.awt.Color(102, 102, 102));
+        jlV1nom.setText("v1nom (V):");
+
+        jlV2nom.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 24)); // NOI18N
+        jlV2nom.setForeground(new java.awt.Color(102, 102, 102));
+        jlV2nom.setText("v2nom (V):");
+
+        cbFases.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
+        cbFases.setForeground(new java.awt.Color(102, 102, 102));
+        cbFases.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una fase...", "Monofásico", "Bifásico", "Trifásico", " " }));
+
+        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 0));
         jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMensaje.setText(" ");
+        jLabelMensaje.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, 1481, Short.MAX_VALUE)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlID)
-                    .addComponent(jlMarca)
-                    .addComponent(jlFases)
-                    .addComponent(jlRol))
-                .addGap(60, 60, 60)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(570, 570, 570)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(106, 106, 106)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jtSnom, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
-                    .addComponent(jtID)
-                    .addComponent(cbFases, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jtMarca, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlID)
+                            .addComponent(jlMarca)
+                            .addComponent(jlFases)
+                            .addComponent(jlRol))
+                        .addGap(60, 60, 60)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jtSnom)
+                            .addComponent(jtID)
+                            .addComponent(cbFases, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtGeoreferenciacion)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jlFrecuencia)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jlV2nom)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -274,8 +330,20 @@ public class ModificarActivos extends javax.swing.JPanel {
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(cbActividad, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jtV1nom, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE))))
-                .addContainerGap(106, Short.MAX_VALUE))
+                            .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlFrecuencia)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addComponent(jtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jtComuna, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(106, 106, 106))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -283,11 +351,8 @@ public class ModificarActivos extends javax.swing.JPanel {
                         .addComponent(btnModificarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(532, 532, 532))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(440, 440, 440))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(465, 465, 465))))
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(445, 445, 445))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -295,37 +360,40 @@ public class ModificarActivos extends javax.swing.JPanel {
                 .addComponent(jpTituloAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(jLabel1)
-                .addGap(64, 64, 64)
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlID)
                     .addComponent(jlActividad)
                     .addComponent(jtID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbActividad, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jlMarca)
-                            .addComponent(jlV1nom)
-                            .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(70, 70, 70))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlMarca)
+                    .addComponent(jtMarca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlV1nom)
+                    .addComponent(jtV1nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlFases)
+                    .addComponent(cbFases, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlV2nom)
-                    .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbFases, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(70, 70, 70)
+                    .addComponent(jtV2nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlRol)
+                    .addComponent(jtSnom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlFrecuencia)
-                    .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jtSnom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
+                    .addComponent(jtFrecuencia, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jtGeoreferenciacion, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jtBarrio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtComuna, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jLabelMensaje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnModificarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -336,6 +404,10 @@ public class ModificarActivos extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnModificarActivoActionPerformed
 
+    private void jtComunaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtComunaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtComunaActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDevolver;
@@ -343,6 +415,9 @@ public class ModificarActivos extends javax.swing.JPanel {
     private javax.swing.JComboBox<String> cbActividad;
     private javax.swing.JComboBox<String> cbFases;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JLabel jlActividad;
     private javax.swing.JLabel jlAdministrador;
@@ -354,7 +429,10 @@ public class ModificarActivos extends javax.swing.JPanel {
     private javax.swing.JLabel jlV1nom;
     private javax.swing.JLabel jlV2nom;
     private javax.swing.JPanel jpTituloAdmin;
+    private javax.swing.JTextField jtBarrio;
+    private javax.swing.JTextField jtComuna;
     private javax.swing.JTextField jtFrecuencia;
+    private javax.swing.JTextField jtGeoreferenciacion;
     private javax.swing.JTextField jtID;
     private javax.swing.JTextField jtMarca;
     private javax.swing.JTextField jtSnom;

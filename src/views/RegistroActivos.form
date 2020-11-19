@@ -30,28 +30,32 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="jpTituloAdmin" alignment="0" pref="1481" max="32767" attributes="0"/>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="95" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jlID" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlMarca" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlFases" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlRol" alignment="0" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="49" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jtSnom" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jtID" alignment="0" max="32767" attributes="0"/>
-                  <Component id="cbFases" alignment="0" max="32767" attributes="0"/>
-                  <Component id="jtMarca" alignment="0" min="-2" pref="340" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Component id="jlFrecuencia" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="69" max="32767" attributes="0"/>
-                      <Component id="jtFrecuencia" min="-2" pref="340" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlID" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlMarca" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlFases" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlRol" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="jtSnom" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="cbFases" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtMarca" alignment="0" min="-2" pref="340" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jtGeoreferenciacion" pref="345" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jlV2nom" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jtV2nom" min="-2" pref="340" max="-2" attributes="0"/>
@@ -64,25 +68,40 @@
                       <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="cbActividad" max="32767" attributes="0"/>
-                          <Component id="jtV1nom" pref="340" max="32767" attributes="0"/>
+                          <Component id="jtV1nom" min="-2" pref="340" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jlFrecuencia" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jtFrecuencia" min="-2" pref="340" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jtBarrio" min="-2" pref="244" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jtComuna" min="-2" pref="87" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="106" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="138" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="btnRegistrarActivo" min="-2" pref="276" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="548" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="532" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabelMensaje" min="-2" pref="463" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="462" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="618" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jLabelMensaje" min="-2" pref="450" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="445" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -101,37 +120,38 @@
                   <Component id="jtID" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="cbActividad" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlMarca" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jlV1nom" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtV1nom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jtMarca" min="-2" pref="30" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                  </Group>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jlMarca" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtMarca" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jlV1nom" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtV1nom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jlFases" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="cbFases" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jlV2nom" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtV2nom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="cbFases" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jlRol" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtSnom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="jlFrecuencia" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtFrecuencia" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                  <Component id="jtSnom" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="jLabelMensaje" pref="25" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtGeoreferenciacion" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtBarrio" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="jtComuna" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="21" max="32767" attributes="0"/>
+              <Component id="jLabelMensaje" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnRegistrarActivo" min="-2" pref="41" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
@@ -279,7 +299,7 @@
                           <Component id="btnDevolver" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="21" max="32767" attributes="0"/>
+                  <EmptySpace pref="19" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -383,15 +403,56 @@
     </Component>
     <Component class="javax.swing.JTextField" name="jtMarca">
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelMensaje">
+    <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Ubuntu" size="15" style="1"/>
+          <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="3" green="0" red="ff" type="rgb"/>
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Georeferenciaci&#xf3;n:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtGeoreferenciacion">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Barrio:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="66" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Comuna:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtBarrio">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtComuna">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtComunaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelMensaje">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value=" "/>
+        <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
     </Component>
   </SubComponents>

@@ -32,18 +32,22 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnRegistroUsuario" max="32767" attributes="0"/>
-                          <Component id="btnModificarUsuario" alignment="0" max="32767" attributes="0"/>
-                          <Component id="btnConsultarUsuario" alignment="0" max="32767" attributes="0"/>
-                      </Group>
+                      <Component id="btnRegistroCliente" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jlGestionUsuarios" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnConsultarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModificarCliente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
+              <EmptySpace min="56" pref="93" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jlGestionClientes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,20 +55,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-              <Component id="jlGestionUsuarios" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-              <Component id="btnRegistroUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-              <Component id="btnModificarUsuario" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-              <Component id="btnConsultarUsuario" min="-2" max="-2" attributes="0"/>
+              <Component id="jlGestionClientes" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+              <Component id="btnRegistroCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+              <Component id="btnModificarCliente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+              <Component id="btnConsultarCliente" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="65" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jlGestionUsuarios">
+    <Component class="javax.swing.JLabel" name="jlGestionClientes">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -75,11 +79,10 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Gestionar usuarios"/>
-        <Property name="alignmentY" type="float" value="0.0"/>
+        <Property name="text" type="java.lang.String" value="Gestionar Clientes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnRegistroUsuario">
+    <Component class="javax.swing.JButton" name="btnRegistroCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
@@ -87,12 +90,12 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Registrar nuevo usuario"/>
+        <Property name="text" type="java.lang.String" value="Registrar nuevo cliente"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnModificarUsuario">
+    <Component class="javax.swing.JButton" name="btnModificarCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
@@ -100,12 +103,12 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Modificar usuario"/>
+        <Property name="text" type="java.lang.String" value="Modificar cliente"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnConsultarUsuario">
+    <Component class="javax.swing.JButton" name="btnConsultarCliente">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
@@ -113,7 +116,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Consultar usuario"/>
+        <Property name="text" type="java.lang.String" value="Consultar cliente"/>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>

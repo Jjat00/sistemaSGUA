@@ -1,7 +1,6 @@
 package Controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import dao.UserDAO;
 import dao.UserDAOImp;
@@ -100,15 +99,15 @@ public class RegUsersController {
 
                     if (!usuarioRegistado(id)) {
                         usuarioDAO.insertUser(usuario);
-                        reg.getlabelMensaje().setText("Usuario registrado");
+                        reg.getLabelMensaje().setText("Usuario registrado");
                     } else{
-                        reg.getlabelMensaje().setText("El usuario ya existe");
+                        reg.getLabelMensaje().setText("El usuario ya existe");
                     }                                                   
                 }else{
-                    reg.getlabelMensaje().setText("La contraseña debe tener al menos 8 caracteres");
+                    reg.getLabelMensaje().setText("La contraseña debe tener al menos 8 caracteres");
                 }
             }else{
-                reg.getlabelMensaje().setText("Completar todos los campos!");
+                reg.getLabelMensaje().setText("Completar todos los campos!");
             }
         } catch (Exception e) {
             System.out.println(e);

@@ -29,47 +29,31 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="btnCerrarSesion" max="32767" attributes="0"/>
-                  <Component id="btnCambiarCuenta" pref="226" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" pref="115" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-              <Component id="jlAdministrador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="111" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="110" max="32767" attributes="0"/>
+              <Component id="btnCerrarSesionOperador" min="-2" pref="175" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
-              <Component id="jlAdministrador" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
-              <Component id="btnCerrarSesion" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
-              <Component id="btnCambiarCuenta" min="-2" pref="39" max="-2" attributes="0"/>
-              <EmptySpace pref="100" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+              <Component id="btnCerrarSesionOperador" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="165" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jlAdministrador">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="GeoSlab703 MdCn BT" size="36" style="1"/>
-        </Property>
-        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="66" type="rgb"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Administrador"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCerrarSesion">
+    <Component class="javax.swing.JButton" name="btnCerrarSesionOperador">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
@@ -82,17 +66,15 @@
         <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="btnCambiarCuenta">
+    <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="GeoSlab703 MdCn BT" size="24" style="1"/>
+          <Font name="GeoSlab703 MdCn BT" size="36" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Cambiar de cuenta"/>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
+        <Property name="text" type="java.lang.String" value="Operador"/>
       </Properties>
     </Component>
   </SubComponents>

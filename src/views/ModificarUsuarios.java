@@ -112,6 +112,10 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         this.btnModificar = btnModificar;
     }
 
+    public JLabel getLabelMensaje() {
+        return jLabelMensaje;
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -203,7 +207,7 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 40)); // NOI18N
@@ -238,9 +242,10 @@ public class ModificarUsuarios extends javax.swing.JPanel {
         cbActividad.setForeground(new java.awt.Color(102, 102, 102));
         cbActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione la actividad...", "Activo", "Inactivo" }));
 
-        jLabelMensaje.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 22));
+        jLabelMensaje.setForeground(new java.awt.Color(255, 0, 0));
         jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelMensaje.setText(" ");
+        jLabelMensaje.setToolTipText("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -260,7 +265,7 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                     .addComponent(jtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 340, Short.MAX_VALUE)
                     .addComponent(jtCedula)
                     .addComponent(cbRol, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 131, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jlActividad)
@@ -278,7 +283,7 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                         .addComponent(jlCelular)
                         .addGap(76, 76, 76)
                         .addComponent(jtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(137, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,8 +294,8 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(487, 487, 487))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(363, 363, 363))))
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(445, 445, 445))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -322,8 +327,8 @@ public class ModificarUsuarios extends javax.swing.JPanel {
                     .addComponent(jlContrasenia)
                     .addComponent(cbRol, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabelMensaje, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                .addComponent(jLabelMensaje)
                 .addGap(9, 9, 9)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())

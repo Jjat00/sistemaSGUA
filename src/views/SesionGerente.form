@@ -29,18 +29,9 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btnCerrarVentanaGerente" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
-                      <Component id="jlGerente" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+              <Component id="jlGerente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="156" max="32767" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
@@ -52,9 +43,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="btnCerrarVentanaGerente" min="-2" pref="44" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
               <Component id="jlGerente" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
               <Component id="btnCerrarSesionGerente" min="-2" max="-2" attributes="0"/>
@@ -73,15 +62,6 @@
           <Color blue="66" green="66" red="66" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Gerente"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnCerrarVentanaGerente">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/icons8-xbox-x-48.png"/>
-        </Property>
-        <Property name="borderPainted" type="boolean" value="false"/>
-        <Property name="contentAreaFilled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnCerrarSesionGerente">

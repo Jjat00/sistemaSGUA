@@ -23,15 +23,7 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
             this.setSize(543, 460);
             this.setBackground(Color.white);
     }
-    
-    public JButton getbtnCerrarGestion(){       
-        return btnCerrarGestion;        
-    }
-    
-    public void setbtnCerrarGestion(JButton btnCerrarGestion){
-        this.btnCerrarGestion = btnCerrarGestion;        
-    }
-    
+   
     public JButton getbtnRegistroUsuario(){       
         return btnRegistroUsuario;        
     }
@@ -65,7 +57,6 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCerrarGestion = new javax.swing.JButton();
         jlGestionUsuarios = new javax.swing.JLabel();
         btnRegistroUsuario = new javax.swing.JButton();
         btnModificarUsuario = new javax.swing.JButton();
@@ -73,10 +64,6 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
-
-        btnCerrarGestion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8-xbox-x-48.png"))); // NOI18N
-        btnCerrarGestion.setBorderPainted(false);
-        btnCerrarGestion.setContentAreaFilled(false);
 
         jlGestionUsuarios.setBackground(new java.awt.Color(255, 255, 255));
         jlGestionUsuarios.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 48)); // NOI18N
@@ -118,16 +105,11 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
                         .addContainerGap()
                         .addComponent(jlGestionUsuarios)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(btnCerrarGestion))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(btnCerrarGestion, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(65, 65, 65)
                 .addComponent(jlGestionUsuarios)
                 .addGap(59, 59, 59)
                 .addComponent(btnRegistroUsuario)
@@ -141,7 +123,6 @@ public class GestionUsuariosAdmin extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCerrarGestion;
     private javax.swing.JButton btnConsultarUsuario;
     private javax.swing.JButton btnModificarUsuario;
     private javax.swing.JButton btnRegistroUsuario;
