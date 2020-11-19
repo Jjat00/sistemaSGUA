@@ -21,6 +21,7 @@ public class ModificarClientes extends javax.swing.JPanel {
      */
     public ModificarClientes() {
         initComponents();
+        this.setSize(1433,746);
     }
     
     public JTextField getjtNombre (){

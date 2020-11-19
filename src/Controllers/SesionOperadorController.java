@@ -1,21 +1,21 @@
 package Controllers;
 
-import java.awt.event.ActionEvent;
 import controllers.MainController;
+import java.awt.event.ActionEvent;
 import views.SesionOperador;
 import views.VentanaEmergente;
 
 /**
  *
- * Controla la ventana para sesion admin
+ * Controla la ventana para sesion operador
  */
-public class SesionAdminController {
+public class SesionOperadorController {
     
     private MainController principal;
     private VentanaEmergente ventanaSalir;
     private SesionOperador sesion;
 
-    public SesionAdminController(MainController principal) {
+    public SesionOperadorController(MainController principal) {
         this.principal = principal;
         this.ventanaSalir = new VentanaEmergente(principal.getVentana(), true);
         this.sesion = new SesionOperador();

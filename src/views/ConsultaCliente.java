@@ -7,6 +7,7 @@ package views;
 
 import javax.swing.JButton;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,11 +15,14 @@ import javax.swing.JTextField;
  */
 public class ConsultaCliente extends javax.swing.JPanel {
 
+    private DefaultTableModel modelTbl;
+    
     /**
      * Creates new form ConsultaCliente
      */
     public ConsultaCliente() {
         initComponents();
+        this.setSize(1416, 740);
     }
     
     public JTextField getjtCedula (){
@@ -27,6 +31,10 @@ public class ConsultaCliente extends javax.swing.JPanel {
     
     public void setjtCedula (JTextField jtCedula){
         this.jtCedula = jtCedula;
+    }
+
+    public JButton getbtnConsultarClientes() {
+        return btnConsultarClientes;
     }
     
     public JButton getbtnConsultarCliente (){
@@ -43,6 +51,10 @@ public class ConsultaCliente extends javax.swing.JPanel {
     
     public void setbtnDevolver (JButton btnDevolver){
         this.btnDevolver = btnDevolver;
+    }
+
+    public DefaultTableModel getModelTbl() {
+        return modelTbl;
     }
 
     /**
@@ -63,29 +75,15 @@ public class ConsultaCliente extends javax.swing.JPanel {
         jpBackgroundTitulo = new javax.swing.JPanel();
         jlTituloGerente = new javax.swing.JLabel();
         btnDevolver = new javax.swing.JButton();
+        btnConsultarClientes = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
 
-        tblUsuarios.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Cédula", "Nombre", "Apellido", "Actividad", "Celular", "Email", "Dirección", "Estrato"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        String data[][] = {};
+        String head[]={"Cédula", "Nombre", "Apellido", "Actividad", "Celular", "Email", "Dirección", "Estrato"};
+        modelTbl = new DefaultTableModel(data, head);
+        tblUsuarios.setModel(modelTbl);
         jScrollPane1.setViewportView(tblUsuarios);
 
         jLabel1.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 36)); // NOI18N
@@ -136,6 +134,13 @@ public class ConsultaCliente extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnConsultarClientes.setBackground(new java.awt.Color(204, 204, 204));
+        btnConsultarClientes.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
+        btnConsultarClientes.setForeground(new java.awt.Color(102, 102, 102));
+        btnConsultarClientes.setText("Consultar todos");
+        btnConsultarClientes.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        btnConsultarClientes.setBorderPainted(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,8 +155,10 @@ public class ConsultaCliente extends javax.swing.JPanel {
                             .addComponent(jLabel2)
                             .addGap(18, 18, 18)
                             .addComponent(jtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(46, 46, 46)
-                            .addComponent(btnConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(60, 60, 60)
+                            .addComponent(btnConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(56, 56, 56)
+                            .addComponent(btnConsultarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1266, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(39, 39, 39))
         );
@@ -161,11 +168,12 @@ public class ConsultaCliente extends javax.swing.JPanel {
                 .addComponent(jpBackgroundTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnConsultarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnConsultarClientes, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -176,6 +184,7 @@ public class ConsultaCliente extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultarCliente;
+    private javax.swing.JButton btnConsultarClientes;
     private javax.swing.JButton btnDevolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -20,7 +20,7 @@ public class GestionClientesOp extends javax.swing.JPanel {
     public GestionClientesOp() {
         initComponents();
         
-            this.setSize(400, 443);
+            this.setSize(458, 469);
             this.setBackground(Color.white);
     }
     
@@ -102,7 +102,7 @@ public class GestionClientesOp extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnConsultarCliente)
                             .addComponent(btnModificarCliente))))
-                .addGap(56, 93, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jlGestionClientes)
@@ -119,7 +119,7 @@ public class GestionClientesOp extends javax.swing.JPanel {
                 .addComponent(btnModificarCliente)
                 .addGap(41, 41, 41)
                 .addComponent(btnConsultarCliente)
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

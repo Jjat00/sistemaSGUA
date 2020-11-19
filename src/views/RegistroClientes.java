@@ -21,6 +21,7 @@ public class RegistroClientes extends javax.swing.JPanel {
      */
     public RegistroClientes() {
         initComponents();
+        this.setSize(1433, 746);
     }
     
     public JTextField getjtNombre (){

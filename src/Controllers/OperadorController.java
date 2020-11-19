@@ -21,7 +21,7 @@ public class OperadorController {
         this.next();
     }
     
-    private void cambiarPanel() {
+    public void cambiarPanel() {
         GUI ventana = principal.getVentana();
         ventana.setSize(operador.getWidth() + 18, operador.getHeight() + 46);
         ventana.setLocationRelativeTo(null);
@@ -31,7 +31,14 @@ public class OperadorController {
         ventana.repaint();
     }
     
-    private void next() {}
+    private void next() {
+        this.operador.getbtnGestionarCliente().addActionListener((ActionEvent ev) -> {
+            new GesClientesController(this);
+        });
+        this.operador.getbtnSalirOperador().addActionListener((ActionEvent ev) -> {
+            new SesionAdminController(principal);
+        });
+    }
 
     public MainController getPrincipal() {
         return principal;
