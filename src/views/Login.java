@@ -80,7 +80,7 @@ public class Login extends javax.swing.JPanel {
 
         jpBackgroundLogin1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jtIngresoUser.setText("Alguien01@gmail.com");
+        jtIngresoUser.setText("Alguien04@gmail.com");
 
         jlUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jlUsuario.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
@@ -99,7 +99,7 @@ public class Login extends javax.swing.JPanel {
         btnIngresoLogin.setText("Ingresar");
         btnIngresoLogin.setBorderPainted(false);
 
-        jtIngresoContrasenia.setText("password1");
+        jtIngresoContrasenia.setText("password4");
 
         jlInfoIncorrecta.setForeground(new java.awt.Color(255, 0, 0));
         jlInfoIncorrecta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
