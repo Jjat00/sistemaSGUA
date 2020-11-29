@@ -5,6 +5,8 @@
  */
 package views;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Sharon Zuleta
@@ -16,6 +18,22 @@ public class ConfiguracionSistema extends javax.swing.JPanel {
      */
     public ConfiguracionSistema() {
         initComponents();
+    }
+    
+    public JButton getbtnDevolver() {
+        return btnDevolver;
+    }
+
+    public void setbtnDevolver(JButton btnDevolver) {
+        this.btnDevolver = btnDevolver;
+    }
+    
+    public JButton getbtnGuardarCambios() {
+        return btnGuardarCambios;
+    }
+
+    public void setbtnGuardarCambios(JButton btnGuardarCambios) {
+        this.btnGuardarCambios = btnGuardarCambios;
     }
 
     /**
