@@ -33,10 +33,6 @@ public class ConsultaCliente extends javax.swing.JPanel {
         this.jtCedula = jtCedula;
     }
 
-    public JButton getbtnConsultarClientes() {
-        return btnConsultarClientes;
-    }
-    
     public JButton getbtnConsultarCliente (){
         return btnConsultarCliente;
     }
