@@ -32,14 +32,6 @@ public class ConsultaReportes extends javax.swing.JPanel {
     public void setbtnDevolver(JButton btnDevolver) {
         this.btnDevolver = btnDevolver;
     }
-    
-    public JButton getbtnBuscarReporte() {
-        return btnBuscarReporte;
-    }
-
-    public void setbtnBuscarReporte(JButton btnBuscarReporte) {
-        this.btnBuscarReporte = btnBuscarReporte;
-    }
 
     public DefaultTableModel getModelTbl() {
         return modelTbl;
@@ -71,11 +63,8 @@ public class ConsultaReportes extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnDevolver = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jtCedula = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        btnBuscarReporte = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jlRecaudoXIntereses2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -115,20 +104,11 @@ public class ConsultaReportes extends javax.swing.JPanel {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel2.setText("Digite la cédula:");
-
         String data[][] = {};
         String head[]={"Clientes", "Total recaudado por intereses", "Total recaudado sin intereses"};
         modelTbl = new DefaultTableModel(data, head);
         jTable1.setModel(modelTbl);
         jScrollPane1.setViewportView(jTable1);
-
-        btnBuscarReporte.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
-        btnBuscarReporte.setForeground(new java.awt.Color(102, 102, 102));
-        btnBuscarReporte.setText("Buscar");
-        btnBuscarReporte.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
 
         jLabel5.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(102, 102, 102));
@@ -147,26 +127,17 @@ public class ConsultaReportes extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(221, 221, 221)
-                        .addComponent(jtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(304, 304, 304)
-                                .addComponent(btnBuscarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(43, 43, 43)
-                                .addComponent(jlTotalUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(359, 359, 359)
-                                .addComponent(jLabel5)
-                                .addGap(72, 72, 72)
-                                .addComponent(jlRecaudoXIntereses2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(84, 84, 84)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(43, 43, 43)
+                        .addComponent(jlTotalUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(359, 359, 359)
+                        .addComponent(jLabel5)
+                        .addGap(72, 72, 72)
+                        .addComponent(jlRecaudoXIntereses2, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(72, Short.MAX_VALUE))
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -174,29 +145,22 @@ public class ConsultaReportes extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(87, 87, 87)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscarReporte, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(79, 79, 79)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(jlTotalUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5)
                     .addComponent(jlRecaudoXIntereses2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscarReporte;
     private javax.swing.JButton btnDevolver;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
@@ -204,6 +168,5 @@ public class ConsultaReportes extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel jlRecaudoXIntereses2;
     private javax.swing.JLabel jlTotalUsuarios;
-    private javax.swing.JTextField jtCedula;
     // End of variables declaration//GEN-END:variables
 }
