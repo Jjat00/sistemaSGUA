@@ -3,6 +3,7 @@ package Controllers;
 import dao.ClienteDAO;
 import dao.ClienteDAOImp;
 import java.awt.event.ActionEvent;
+import model.Cliente;
 import views.GUI;
 import views.ModificarClientes;
 
@@ -43,6 +44,38 @@ public class ModClientesController {
         });
     }
 
-    private void modificarCliente() {}
+    private void modificarCliente() {
+        try {
+            boolean actividadUsuario = false;
+            String cedula = mod.getjtCedula().getText();
+            String nombre = mod.getjtNombre().getText();
+            String apellido = mod.getjtApellidos().getText();
+            String celular = mod.getjtCelular().getText();
+            String actividad = mod.getcbActividad().getSelectedItem().toString();
+            String email = mod.getjtEmail().getText();
+            String direccion = mod.getjtDireccion().getText();
+            String estrato = mod.getjtEstrato().getText();
+
+            switch (actividad) {
+                case "Activo":
+                    actividadUsuario = true;
+                    break;
+                case "Inactivo":
+                    actividadUsuario = false;
+                    break;
+                default:
+                    break;
+            }
+            Long id = Long.parseLong(cedula);
+            Long cel = Long.parseLong(celular);
+            Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario);
+            System.out.println(cliente.toString());
+            clienteDAO.updateCliente(cliente);
+
+        } catch (Exception e) {
+            // TODO: handle exception
+
+        }        
+    }
     
 }

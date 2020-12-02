@@ -3,6 +3,7 @@ package Controllers;
 import dao.ClienteDAO;
 import dao.ClienteDAOImp;
 import java.awt.event.ActionEvent;
+import model.Cliente;
 import views.GUI;
 import views.RegistroClientes;
 
@@ -44,6 +45,39 @@ public class RegClientesController {
         });
     }
 
-    private void registrarCliente() {}
+    private void registrarCliente() {
+        try {
+            boolean actividadUsuario = false;
+            String cedula = reg.getjtCedula().getText();
+            String nombre = reg.getjtNombre().getText();
+            String apellido = reg.getjtApellidos().getText();
+            String celular = reg.getjtCelular().getText();
+            String actividad = reg.getcbActividad().getSelectedItem().toString();
+            String email = reg.getjtEmail().getText();
+            String direccion = reg.getjtDireccion().getText();
+            String estrato = reg.getjtEstrato().getText();
+
+             switch (actividad) {
+                case "Activo":
+                    actividadUsuario = true;
+                    break;
+                case "Inactivo":
+                    actividadUsuario = false;
+                    break;                
+                default:
+                    break;
+            }
+            Long id = Long.parseLong(cedula);
+            Long cel = Long.parseLong(celular);
+            Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario);
+            System.out.println(cliente.toString());
+            clienteDAO.insertCliente(cliente);
+            
+            
+        } catch (Exception e) {
+            //TODO: handle exception
+
+        }
+    }
     
 }
