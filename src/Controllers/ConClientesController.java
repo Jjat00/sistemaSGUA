@@ -2,10 +2,13 @@ package Controllers;
 
 import dao.ClienteDAO;
 import dao.ClienteDAOImp;
+import dao.UserDAO;
+import dao.UserDAOImp;
 import model.Cliente;
 
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
+import model.Usuario;
 
 import views.ConsultaCliente;
 import views.GUI;
@@ -19,11 +22,13 @@ public class ConClientesController {
     private OperadorController operador;
     private ConsultaCliente consulta;
     private ClienteDAO clienteDAO;
+    private UserDAO usuarioDAO;
 
     public ConClientesController(OperadorController operador) {
         this.operador = operador;
         this.consulta = new ConsultaCliente();
         this.clienteDAO = new ClienteDAOImp();
+        this.usuarioDAO = new UserDAOImp();
         this.cambiarPanel();
         this.next();
         this.leerTodos();
