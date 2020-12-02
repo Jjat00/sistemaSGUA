@@ -40,22 +40,6 @@ public class InicioAdmin extends javax.swing.JPanel {
         this.btnGestionarActivo = btnGestionarActivo;        
     }
     
-    public JButton getbtnModificarFactura(){       
-        return btnModificarFactura;        
-    }
-    
-    public void setbtnModificarFactura(JButton btnModificarFactura){
-        this.btnModificarFactura = btnModificarFactura;        
-    }
-    
-    public JButton getbtnConfigurarSistema(){       
-        return btnConfigurarSistema;        
-    }
-    
-    public void setbtnConfigurarSistema(JButton btnConfigurarSistema){
-        this.btnConfigurarSistema = btnConfigurarSistema;        
-    }
-    
     public JButton getbtnSalirAdmin(){       
         return btnSalirAdmin;        
     }
@@ -77,11 +61,7 @@ public class InicioAdmin extends javax.swing.JPanel {
         jlAdministrador = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         btnGestionarActivo = new javax.swing.JButton();
-        btnModificarFactura = new javax.swing.JButton();
-        btnConfigurarSistema = new javax.swing.JButton();
         btnGestionarUsuario = new javax.swing.JButton();
         btnSalirAdmin = new javax.swing.JButton();
 
@@ -116,26 +96,11 @@ public class InicioAdmin extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/IconActivo.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconFactura.png"))); // NOI18N
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconConfigSistema.png"))); // NOI18N
-
         btnGestionarActivo.setBackground(new java.awt.Color(204, 204, 204));
         btnGestionarActivo.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
         btnGestionarActivo.setForeground(new java.awt.Color(102, 102, 102));
         btnGestionarActivo.setText("Gestionar activo");
         btnGestionarActivo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
-
-        btnModificarFactura.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
-        btnModificarFactura.setForeground(new java.awt.Color(102, 102, 102));
-        btnModificarFactura.setText("Modificar factura");
-        btnModificarFactura.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
-
-        btnConfigurarSistema.setBackground(new java.awt.Color(204, 204, 204));
-        btnConfigurarSistema.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
-        btnConfigurarSistema.setForeground(new java.awt.Color(102, 102, 102));
-        btnConfigurarSistema.setText("Configurar sistema");
-        btnConfigurarSistema.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
 
         btnGestionarUsuario.setBackground(new java.awt.Color(204, 204, 204));
         btnGestionarUsuario.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
@@ -151,52 +116,35 @@ public class InicioAdmin extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jpTituloAdmin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(148, 148, 148)
-                .addComponent(jLabel1)
-                .addGap(215, 215, 215)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(214, 214, 214)
-                .addComponent(jLabel3)
-                .addGap(148, 148, 148))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(111, 111, 111)
-                .addComponent(btnGestionarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159)
-                .addComponent(btnGestionarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
-                .addComponent(btnModificarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(165, 165, 165)
-                .addComponent(btnConfigurarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnSalirAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+                .addContainerGap(337, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnSalirAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(399, 399, 399)
+                        .addComponent(jLabel2)
+                        .addGap(364, 364, 364))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnGestionarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(326, 326, 326)
+                        .addComponent(btnGestionarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(313, 313, 313))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpTituloAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(171, 171, 171)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))))
+                .addGap(171, 171, 171)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGestionarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificarFactura, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnConfigurarSistema, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnGestionarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnGestionarUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGestionarActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
                 .addComponent(btnSalirAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -205,15 +153,11 @@ public class InicioAdmin extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConfigurarSistema;
     private javax.swing.JButton btnGestionarActivo;
     private javax.swing.JButton btnGestionarUsuario;
-    private javax.swing.JButton btnModificarFactura;
     private javax.swing.JButton btnSalirAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jlAdministrador;
     private javax.swing.JPanel jpTituloAdmin;
     // End of variables declaration//GEN-END:variables
