@@ -38,6 +38,9 @@ public class OperadorController {
         this.operador.getbtnSalirOperador().addActionListener((ActionEvent ev) -> {
             new SesionAdminController(principal);
         });
+        this.operador.getbtnFactura().addActionListener((ActionEvent ev) -> {
+            new FacturaController(this);
+        });
     }
 
     public MainController getPrincipal() {
