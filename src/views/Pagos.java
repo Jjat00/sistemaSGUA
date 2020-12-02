@@ -20,6 +20,7 @@ public class Pagos extends javax.swing.JPanel {
      */
     public Pagos() {
         initComponents();
+        this.setSize(1416, 755);
     }
     
     public JTextField getjtIdFactura (){

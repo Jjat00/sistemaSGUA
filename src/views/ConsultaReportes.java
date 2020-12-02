@@ -18,6 +18,7 @@ public class ConsultaReportes extends javax.swing.JPanel {
      */
     public ConsultaReportes() {
         initComponents();
+        this.setSize(1360, 802);
     }
     
     public JButton getbtnDevolver() {

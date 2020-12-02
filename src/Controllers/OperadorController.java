@@ -41,6 +41,12 @@ public class OperadorController {
         this.operador.getbtnFactura().addActionListener((ActionEvent ev) -> {
             new FacturaController(this);
         });
+        this.operador.getbtnRegistrarPagos().addActionListener((ActionEvent ev) -> {
+            new PagoController(this);
+        });
+        this.operador.getbtnConsultaReporte().addActionListener((ActionEvent ev) -> {
+            new ReporteController(this);
+        });
     }
 
     public MainController getPrincipal() {
