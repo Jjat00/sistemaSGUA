@@ -38,6 +38,9 @@ public class GerenteController {
         this.gerente.getbtnConsultaUsuario().addActionListener((ActionEvent ev) -> {
             new ConUserGerenteController(this);
         });
+        this.gerente.getbtnConsultaReporte().addActionListener((ActionEvent ev) -> {
+            new ReporteGerenteController(this);
+        });
     }
 
     public MainController getPrincipal() {
