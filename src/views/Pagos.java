@@ -7,6 +7,7 @@ package views;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,6 +38,10 @@ public class Pagos extends javax.swing.JPanel {
     public JComboBox getcbMetodoPago (){
         return cbMetodoPago;
     }
+    
+    public JLabel getLabelMensaje() {
+        return jLabelMensaje;
+    }    
     
     public void setcbMetodoPago (JComboBox cbMetodoPago){
         this.cbMetodoPago = cbMetodoPago;
@@ -82,6 +87,7 @@ public class Pagos extends javax.swing.JPanel {
         btnPagar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaInformacionPago = new javax.swing.JTable();
+        jLabelMensaje = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 102, 102), 4));
@@ -147,6 +153,10 @@ public class Pagos extends javax.swing.JPanel {
         TablaInformacionPago.setModel(modelTbl);
         jScrollPane1.setViewportView(TablaInformacionPago);
 
+        jLabelMensaje.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N
+        jLabelMensaje.setForeground(new java.awt.Color(229, 2, 2));
+        jLabelMensaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -172,7 +182,10 @@ public class Pagos extends javax.swing.JPanel {
                         .addComponent(btnPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1202, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(452, 452, 452)
+                        .addComponent(jLabelMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 441, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -190,7 +203,9 @@ public class Pagos extends javax.swing.JPanel {
                         .addComponent(cbMetodoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(67, 67, 67)
                 .addComponent(btnPagar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jLabelMensaje)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(102, 102, 102))
         );
@@ -205,6 +220,7 @@ public class Pagos extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabelMensaje;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jlTituloGerente;
     private javax.swing.JPanel jpBackgroundTitulo;

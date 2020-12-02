@@ -16,14 +16,19 @@ public class Cliente {
     private long celular;
     private String email;
     private boolean actividad;
+    private String direccion;
+    private int estrato;
 
-    public Cliente(long cedula, String nombre, String apellido, long celular, String email, boolean actividad) {
+    public Cliente(long cedula, String nombre, String apellido, long celular, 
+                    String email, boolean actividad, String direccion, int estrato) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.celular = celular;
         this.email = email;
         this.actividad = actividad;
+        this.direccion = direccion;
+        this.estrato = estrato;
     }
 
     public long getCedula() {
@@ -74,6 +79,15 @@ public class Cliente {
         this.email = email;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public int getEstrato() {
+        return estrato;
+    }
+
+
     @Override
     public String toString() {
         return "Cliente: {" 
@@ -83,6 +97,8 @@ public class Cliente {
                 + ",\n\tactividad: " + this.actividad 
                 + ",\n\tcelular: " + this.celular 
                 + ",\n\temail: " + this.email  
+                + ",\n\tdireccion: " + this.direccion 
+                + ",\n\testrato: " + this.estrato 
                 + "\n}";
     }
 }
