@@ -3,6 +3,8 @@ package Controllers;
 import java.awt.event.ActionEvent;
 import views.Factura;
 import views.VentanaEmergente;
+import java.awt.print.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,12 +35,22 @@ public class FacturaController {
     
     private void next() {
         this.factura.getbtnConvertirPDF().addActionListener((ActionEvent ev) -> {
-            /**
-             * Todo lo que se ponga aquí abajo es lo que ocurrirá cuando se presione
-             * el botón de convertir a pdf (PUEDES ELIMINAR ESTE MENSAJE)
-             */
-            //**** ACCION DE EJEMPLO ****
-            metodoDeEjemplo1("\"convertir PDF\" ");
+            
+            try
+            {
+                PrinterJob gap = PrinterJob.getPrinterJob();
+                gap.setPrintable(this.factura);
+                boolean top = gap.printDialog();
+                if(top)
+                {
+                    gap.print();
+                }
+            }
+            catch(PrinterException pex)
+            {
+                JOptionPane.showMessageDialog(null, "ERROR DE PROGRAMA", "Error/n" + pex, JOptionPane.INFORMATION_MESSAGE);
+            }
+ 
         });
         this.factura.getbtnModificarPublicidad().addActionListener((ActionEvent ev) -> {
             /**
