@@ -2,7 +2,11 @@ package Controllers;
 
 import dao.ClienteDAO;
 import dao.ClienteDAOImp;
+import model.Cliente;
+
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
 import views.ConsultaCliente;
 import views.GUI;
 
@@ -40,10 +44,65 @@ public class ConClientesController {
         this.consulta.getbtnDevolver().addActionListener((ActionEvent ev) -> {
             this.operador.cambiarPanel();
         });
+       
         this.consulta.getbtnConsultarCliente().addActionListener((ActionEvent ev) ->{
+            this.leerUno();
+        });
+
+        this.consulta.getbtnConsultarClientes().addActionListener((ActionEvent ev) ->{
             this.leerTodos();
         });
     }
 
-    private void leerTodos() {}
+    private void leerUno(){
+        long cedula = Long.parseLong(this.consulta.getjtCedula().getText());
+        try {
+            Cliente cliente = clienteDAO.selectCliente(cedula);
+            String nombre = cliente.getNombre();
+            String apellido = cliente.getApellido();
+            long celular = cliente.getCedula();
+            Boolean actividad = cliente.getActividad();
+            String email = cliente.getEmail();
+            this.limpiarTabla();
+            String datos[] = { cedula + "", 
+                            nombre, apellido, 
+                            actividad + "", celular + "", email };
+            this.consulta.getModelTbl().addRow(datos);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void leerTodos() {
+        try {
+            this.limpiarTabla();
+            ArrayList<Cliente> clientes = clienteDAO.selectAllClientes();
+            long cedula = 0;
+            String nombre = "";
+            String apellido = "";
+            long celular = 0;
+            Boolean actividad = false;
+            String email = "";
+            for (Cliente cliente : clientes) {
+                cedula = cliente.getCedula();
+                nombre = cliente.getNombre();
+                apellido = cliente.getApellido();
+                celular = cliente.getCedula();
+                actividad = cliente.getActividad();
+                email = cliente.getEmail();
+                String datos[] = { cedula + "", 
+                        nombre, apellido , 
+                        actividad + "", celular + "", email};
+                this.consulta.getModelTbl().addRow(datos);                
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    private void limpiarTabla() {
+        while (consulta.getModelTbl().getRowCount() != 0) {
+            this.consulta.getModelTbl().removeRow(0);
+        }
+    }    
 }
