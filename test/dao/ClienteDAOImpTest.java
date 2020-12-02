@@ -21,7 +21,7 @@ public class ClienteDAOImpTest {
     @Test
     public void testInsertCliente() throws Exception {
         System.out.println("insertCliente");
-        Cliente cliente = new Cliente(2144777777L, "Nombre7", "Apellido7", 3157777779L, "Cliente08@gmail.com", true);
+        Cliente cliente = new Cliente(2144711477L, "Nombre9", "Apellido9", 3159777779L, "Cliente08@gmail.com", true, "calle 4C 39-23", 1);
         ClienteDAOImp instance = new ClienteDAOImp();
         boolean expResult = true;
         boolean result = instance.insertCliente(cliente);
@@ -49,7 +49,7 @@ public class ClienteDAOImpTest {
         System.out.println("selectCliente");
         long cedula = 2144000000L;
         ClienteDAOImp instance = new ClienteDAOImp();
-        Cliente expResult = new Cliente(2144000000L, "Nombre1", "Apellido1", 3150000009L, "Cliente01@gmail.com", true);
+        Cliente expResult = new Cliente(2144711477L, "Nombre9", "Apellido9", 3159777779L, "Cliente08@gmail.com", true, "calle 4C 39-23", 1);
         Cliente result = instance.selectCliente(cedula);
         assertEquals(expResult.toString(), result.toString());
     }
@@ -77,7 +77,7 @@ public class ClienteDAOImpTest {
     @Test
     public void testUpdateCliente() throws Exception {
         System.out.println("updateCliente");
-        Cliente cliente = new Cliente(2144000000L, "Nombre1", "Apellido1", 3150000009L, "Cliente01@gmail.com", true);
+        Cliente cliente = new Cliente(2144711477L, "Nombre9", "Apellido9", 3159777779L, "Cliente08@gmail.com", true, "calle 4C 39-23", 1);
         ClienteDAOImp instance = new ClienteDAOImp();
         boolean expResult = true;
         boolean result = instance.updateCliente(cliente);

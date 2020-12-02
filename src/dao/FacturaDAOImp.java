@@ -98,4 +98,13 @@ public class FacturaDAOImp implements FacturaDAO {
         Factura factura = new Factura(NoCuenta,cedulaCliente,estadoPago,tipoUso,NoMedidor,valorUnitario,subsidio);
         return factura;
     }
+
+    @Override
+    public boolean updateFacturaByID(int idFactura, boolean estadoPago) throws SQLException {
+        Connection con = ConnectionBridge.getConnection();
+        String sql = "UPDATE factura SET pago = '" + estadoPago + "' WHERE id = " + idFactura;
+        PreparedStatement pstm = con.prepareStatement(sql);
+        int result = pstm.executeUpdate();
+        return (result == 1);        
+    }
 }

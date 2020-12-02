@@ -67,17 +67,41 @@ public class RegClientesController {
                 default:
                     break;
             }
-            Long id = Long.parseLong(cedula);
-            Long cel = Long.parseLong(celular);
-            Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario);
-            System.out.println(cliente.toString());
-            clienteDAO.insertCliente(cliente);
-            
-            
-        } catch (Exception e) {
-            //TODO: handle exception
 
+            if (!(cedula.equals("") || nombre.equals("") || celular.equals("")||
+                    email.equals("") || apellido.equals(""))) {
+                Long id = Long.parseLong(cedula);
+                Long cel = Long.parseLong(celular);
+                int estratoCliente = Integer.parseInt(estrato);
+                Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario, direccion, 
+                        estratoCliente);
+                if (celular.length() == 10) {
+                    if (!this.clienteRegistrado(id)) {
+                        clienteDAO.insertCliente(cliente);    
+                        reg.getLabelMensaje().setText("cliente registrado");
+                    }else{
+                        reg.getLabelMensaje().setText("El cliente ya existe");
+                    }
+                }else{
+                    reg.getLabelMensaje().setText("min digitos celular 10");
+                }
+            }else{
+                reg.getLabelMensaje().setText("Completar todos los campos!");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
         }
+    }
+
+    private boolean clienteRegistrado(Long cedula){
+        Boolean registrado = false;
+        try {
+            Cliente cliente = clienteDAO.selectCliente(cedula);
+            registrado = (cliente != null);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return registrado;
     }
     
 }

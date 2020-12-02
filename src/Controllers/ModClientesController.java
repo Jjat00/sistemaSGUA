@@ -3,6 +3,8 @@ package Controllers;
 import dao.ClienteDAO;
 import dao.ClienteDAOImp;
 import java.awt.event.ActionEvent;
+import java.sql.SQLException;
+
 import model.Cliente;
 import views.GUI;
 import views.ModificarClientes;
@@ -66,16 +68,42 @@ public class ModClientesController {
                 default:
                     break;
             }
-            Long id = Long.parseLong(cedula);
-            Long cel = Long.parseLong(celular);
-            Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario);
-            System.out.println(cliente.toString());
-            clienteDAO.updateCliente(cliente);
+            if (!(cedula.equals("") || nombre.equals("") || celular.equals("") || email.equals("")
+                    || apellido.equals(""))) {
+                Long id = Long.parseLong(cedula);
+                Long cel = Long.parseLong(celular);
+                int estratoCliente = Integer.parseInt(estrato);
+                Cliente cliente = new Cliente(id, nombre, apellido, cel, email, actividadUsuario, direccion, estratoCliente);
+                if (celular.length() == 10) {
+                    if (clienteRegistado(id)) {
+                        System.out.println(cliente.toString());
+                        clienteDAO.updateCliente(cliente);
+                        mod.getLabelMensaje().setText("cliente actualizado");
+                    }else{
+                        mod.getLabelMensaje().setText("El cliente no existe");
+                    }
+                }else{
+                    mod.getLabelMensaje().setText("min digitos celular 10");
+                }    
+            }else{
+                mod.getLabelMensaje().setText("Completar todos los campos!");
+            }
 
-        } catch (Exception e) {
-            // TODO: handle exception
+        } catch (SQLException e) {
+            System.out.println(e);
 
         }        
     }
+
+    private boolean clienteRegistado(Long idCliente) {
+        Boolean registrado = false;
+        try {
+            Cliente cliente = clienteDAO.selectCliente(idCliente);
+            registrado = (cliente  != null);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return registrado;
+    }    
     
 }

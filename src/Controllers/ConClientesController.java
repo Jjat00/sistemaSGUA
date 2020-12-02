@@ -88,6 +88,8 @@ public class ConClientesController {
             long celular = 0;
             Boolean actividad = false;
             String email = "";
+            String direccion = "";
+            int estrato = 0;
             for (Cliente cliente : clientes) {
                 cedula = cliente.getCedula();
                 nombre = cliente.getNombre();
@@ -95,9 +97,13 @@ public class ConClientesController {
                 celular = cliente.getCedula();
                 actividad = cliente.getActividad();
                 email = cliente.getEmail();
+                direccion = cliente.getDireccion();
+                estrato = cliente.getEstrato();
                 String datos[] = { cedula + "", 
                         nombre, apellido , 
-                        actividad + "", celular + "", email};
+                        actividad + "", celular + "", email,
+                        direccion, estrato +""
+                    };
                 this.consulta.getModelTbl().addRow(datos);                
             }
         } catch (Exception e) {

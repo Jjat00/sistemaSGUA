@@ -20,7 +20,8 @@ public class ClienteDAOImp implements ClienteDAO{
         String sql = "INSERT INTO cliente VALUES ('"+cliente.getCedula()+
                 "', '"+cliente.getNombre()+"', '"
                      +cliente.getApellido()+"', "+cliente.getCelular()+
-                ", "+cliente.getActividad()+", '"+cliente.getEmail()+"')";
+                ", "+cliente.getActividad()+", '"+cliente.getEmail()+"','" + 
+                    cliente.getDireccion() + "' , " + cliente.getEstrato() + ")";
         PreparedStatement pstm = con.prepareStatement(sql);
         int result = pstm.executeUpdate();
         
@@ -87,7 +88,9 @@ public class ClienteDAOImp implements ClienteDAO{
         long celular = rs.getLong("celular");
         String email = rs.getString("email");
         boolean actividad = rs.getBoolean("actividad");
-        Cliente cliente = new Cliente(cedula,nombre, apellido,celular, email,actividad);
+        String direccion = rs.getString("direccion");
+        int estrato = rs.getInt("estrato");
+        Cliente cliente = new Cliente(cedula,nombre, apellido,celular, email,actividad, direccion, estrato);
         return cliente;
     }
 }
