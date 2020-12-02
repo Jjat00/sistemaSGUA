@@ -41,6 +41,10 @@ public class ConsultaCliente extends javax.swing.JPanel {
         this.btnConsultarCliente = btnConsultarCliente;
     }
     
+    public JButton getbtnConsultarClientes() {
+        return btnConsultarClientes;
+    }
+    
     public JButton getbtnDevolver (){
         return btnDevolver;
     }
