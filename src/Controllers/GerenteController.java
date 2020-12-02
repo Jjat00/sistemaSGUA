@@ -21,7 +21,7 @@ public class GerenteController {
         this.next();
     }
     
-    private void cambiarPanel() {
+    public void cambiarPanel() {
         GUI ventana = principal.getVentana();
         ventana.setSize(gerente.getWidth() + 18, gerente.getHeight() + 46);
         ventana.setLocationRelativeTo(null);
@@ -34,6 +34,9 @@ public class GerenteController {
     private void next() {
         this.gerente.getbtnSalirGerente().addActionListener((ActionEvent ev) -> {
             new SesionGerenteController(principal);
+        });
+        this.gerente.getbtnConsultaUsuario().addActionListener((ActionEvent ev) -> {
+            new ConUserGerenteController(this);
         });
     }
 

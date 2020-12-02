@@ -6,6 +6,7 @@
 package views;
 
 import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,6 +14,8 @@ import javax.swing.JButton;
  */
 public class ConsultaReportes extends javax.swing.JPanel {
 
+    private DefaultTableModel modelTbl;
+    
     /**
      * Creates new form ConsultaReportes
      */
@@ -35,6 +38,10 @@ public class ConsultaReportes extends javax.swing.JPanel {
 
     public void setbtnBuscarReporte(JButton btnBuscarReporte) {
         this.btnBuscarReporte = btnBuscarReporte;
+    }
+
+    public DefaultTableModel getModelTbl() {
+        return modelTbl;
     }
 
     /**
@@ -95,29 +102,14 @@ public class ConsultaReportes extends javax.swing.JPanel {
                 .addContainerGap(26, Short.MAX_VALUE))
         );
 
-        jLabel2.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 20)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("Digite la cédula:");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Clientes", "Total recaudado por intereses", "Total recaudado sin intereses", "Total recaudado"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        String data[][] = {};
+        String head[]={"Clientes", "Total recaudado por intereses", "Total recaudado sin intereses", "Total recaudado"};
+        modelTbl = new DefaultTableModel(data, head);
+        jTable1.setModel(modelTbl);
         jScrollPane1.setViewportView(jTable1);
 
         btnBuscarReporte.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 18)); // NOI18N

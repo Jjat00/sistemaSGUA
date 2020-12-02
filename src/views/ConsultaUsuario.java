@@ -7,6 +7,7 @@ package views;
 
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
@@ -60,6 +61,11 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         return modelTbl;
     }
 
+    public JLabel getJlTitulo() {
+        return jlTitulo;
+    }
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -70,7 +76,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private void initComponents() {
 
         jpTituloAdmin = new javax.swing.JPanel();
-        jlAdministrador = new javax.swing.JLabel();
+        jlTitulo = new javax.swing.JLabel();
         btnDevolver = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblUsuarios = new javax.swing.JTable();
@@ -86,9 +92,9 @@ public class ConsultaUsuario extends javax.swing.JPanel {
         jpTituloAdmin.setBackground(new java.awt.Color(102, 102, 102));
         jpTituloAdmin.setPreferredSize(new java.awt.Dimension(1352, 120));
 
-        jlAdministrador.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 36)); // NOI18N
-        jlAdministrador.setForeground(new java.awt.Color(255, 255, 255));
-        jlAdministrador.setText("Administrador");
+        jlTitulo.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 36)); // NOI18N
+        jlTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jlTitulo.setText("Administrador");
 
         btnDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iconDevolver.png"))); // NOI18N
         btnDevolver.setBorderPainted(false);
@@ -100,7 +106,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
             jpTituloAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpTituloAdminLayout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addComponent(jlAdministrador)
+                .addComponent(jlTitulo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1038, Short.MAX_VALUE)
                 .addComponent(btnDevolver, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(22, 22, 22))
@@ -111,11 +117,11 @@ public class ConsultaUsuario extends javax.swing.JPanel {
                 .addGroup(jpTituloAdminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(40, 40, 40)
-                        .addComponent(jlAdministrador))
+                        .addComponent(jlTitulo))
                     .addGroup(jpTituloAdminLayout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addComponent(btnDevolver)))
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         String data[][] = {};
@@ -195,7 +201,7 @@ public class ConsultaUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JLabel jlAdministrador;
+    private javax.swing.JLabel jlTitulo;
     private javax.swing.JPanel jpTituloAdmin;
     private javax.swing.JTextField jtCedula;
     private javax.swing.JTable tblUsuarios;

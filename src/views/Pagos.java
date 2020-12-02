@@ -8,12 +8,15 @@ package views;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Sharon Zuleta
  */
 public class Pagos extends javax.swing.JPanel {
+    
+    private DefaultTableModel modelTbl;
 
     /**
      * Creates new form Pagos
@@ -53,6 +56,10 @@ public class Pagos extends javax.swing.JPanel {
     
     public void setbtnDevolver (JButton btnDevolver){
         this.btnDevolver = btnDevolver;
+    }
+
+    public DefaultTableModel getModelTbl() {
+        return modelTbl;
     }
 
     /**
@@ -134,25 +141,10 @@ public class Pagos extends javax.swing.JPanel {
 
         TablaInformacionPago.setFont(new java.awt.Font("GeoSlab703 MdCn BT", 1, 14)); // NOI18N
         TablaInformacionPago.setForeground(new java.awt.Color(102, 102, 102));
-        TablaInformacionPago.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Id Pago", "Id Factura", "Método de pago", "Fecha de realización"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        String data[][] = {};
+        String head[]={"Id Pago", "Id Factura", "Método de pago", "Fecha de realización"};
+        modelTbl = new DefaultTableModel(data, head);
+        TablaInformacionPago.setModel(modelTbl);
         jScrollPane1.setViewportView(TablaInformacionPago);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
